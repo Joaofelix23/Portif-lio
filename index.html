@@ -1,520 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>João Felix · Portfólio</title>
-
-<!--
-  =====================================================================
-  GUIA RÁPIDO DE EDIÇÃO  (pode apagar este comentário depois)
-  ---------------------------------------------------------------------
-  • Cada projeto é um bloco <article class="case"> entre comentários
-    "CASE 01", "CASE 02"... Para REORDENAR: recorte o bloco e cole onde
-    quiser. Para ADICIONAR: copie um bloco .case e troque os textos.
-  • As duas PEÇAS e os FRAMES dos vídeos já estão embutidos no arquivo.
-  • Os VÍDEOS ficam na pasta "midia" ao lado deste arquivo — mantenha
-    o HTML e a pasta "midia" sempre juntos.
-  • Para TROCAR um placeholder pontilhado por imagem:
-        <img class="shot" src="midia/arquivo.png" alt="descrição">
-  • EXPORTAR PDF: Ctrl/Cmd + P -> "Salvar como PDF"
-    (marque "Gráficos de plano de fundo"). Vídeo não aparece no PDF —
-    nele fica o frame de capa.
-  • Campos entre [colchetes] são pra você conferir/ajustar.
-  =====================================================================
--->
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fefdd7">
+<title>Projetos & Eventos · João Felix</title>
+<meta name="description" content="Projetos, campanhas e eventos de João Felix: atendimento, estratégia, conteúdo e produção.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --asphalt:#1E1710; --asphalt-2:#2B2117;
-    --paper:#ECE3D0; --paper-2:#E0D4BC;
-    --concrete:#8B7C64; --ink:#241B10;
-    --green:#C07A3E; --green-deep:#7E4A22; --line:#CBB99B;
-    --display:'Anton',Impact,sans-serif;
-    --body:'Archivo',system-ui,sans-serif;
-    --mono:'Space Mono',monospace;
-    --maxw:1060px;
-  }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; }
-  body{ font-family:var(--body); background:var(--paper); color:var(--ink); line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
-  body::before{ content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.05; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-  .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 28px; position:relative; z-index:1; }
-
-  .stamp{ font-family:var(--mono); font-size:.72rem; letter-spacing:.32em; text-transform:uppercase; color:var(--green-deep); display:inline-block; }
-
-  .agency-intro{
-    border-left:3px solid var(--green);
-    padding-left:18px;
-    margin:22px 0 28px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-  }
-  .agency-intro p{ margin:0; max-width:58ch; }
-
-  .case__client-title{
-    font-family:var(--display);
-    font-size:clamp(1.5rem,3.5vw,2.2rem);
-    text-transform:uppercase; line-height:1;
-    margin:28px 0 10px; color:var(--ink); letter-spacing:.01em;
-  }
-
-  .video-links{ display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
-  .video-btn{
-    display:inline-flex; align-items:center; gap:10px;
-    font-family:var(--mono); font-size:.82rem; letter-spacing:.04em;
-    color:var(--paper); background:var(--asphalt);
-    border:2px solid var(--green); padding:12px 20px;
-    border-radius:2px; text-decoration:none;
-    transition:background .2s, color .2s;
-  }
-  .video-btn:hover{ background:var(--green); color:var(--paper); }
-  .video-btn svg{ width:18px; height:18px; flex-shrink:0; }
-
-  .site-box{
-    display:flex; align-items:center; justify-content:space-between;
-    gap:16px; margin-top:18px; padding:20px 24px;
-    border:2px solid var(--line); border-radius:2px;
-    background:var(--paper-2);
-  }
-  .site-box__info p{ font-family:var(--mono); font-size:.78rem; letter-spacing:.1em;
-    text-transform:uppercase; color:var(--concrete); margin-bottom:6px; }
-  .site-box__info strong{ font-size:1rem; font-family:var(--body); color:var(--ink); }
-  .site-box__btn{
-    flex-shrink:0; font-family:var(--mono); font-size:.8rem; letter-spacing:.04em;
-    color:var(--paper); background:var(--green-deep); padding:11px 20px;
-    border-radius:2px; text-decoration:none; white-space:nowrap;
-    transition:background .2s;
-  }
-  .site-box__btn:hover{ background:var(--green); }
-
-  .presentation-btn{
-    display:inline-block;
-    margin-top:14px;
-    font-family:var(--mono);
-    font-size:.82rem;
-    letter-spacing:.06em;
-    color:var(--paper);
-    background:var(--green-deep);
-    padding:10px 20px;
-    border-radius:2px;
-    text-decoration:none;
-    transition:background .2s;
-  }
-  .presentation-btn:hover{ background:var(--green); }
-
-  .fade-up{ opacity:0; transform:translateY(22px); transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
-  .fade-up.in{ opacity:1; transform:none; }
-  .fade-left{ opacity:0; transform:translateX(-18px); transition:opacity .65s cubic-bezier(.22,1,.36,1), transform .65s cubic-bezier(.22,1,.36,1); }
-  .fade-left.in{ opacity:1; transform:none; }
-  .fade-scale{ opacity:0; transform:scale(.97); transition:opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
-  .fade-scale.in{ opacity:1; transform:none; }
-  .delay-1{ transition-delay:.12s; } .delay-2{ transition-delay:.24s; } .delay-3{ transition-delay:.36s; }
-  .stamp--light{ color:var(--green); }
-
-  .hero{ background:var(--asphalt); color:var(--paper); min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; }
-  .hero .wrap{ padding-top:80px; padding-bottom:80px; }
-  .hero__eyebrow{ margin-bottom:26px; }
-  .hero__name{ font-family:var(--display); font-size:clamp(3.4rem,13vw,9.5rem); line-height:.86; text-transform:uppercase; letter-spacing:-.01em; margin-bottom:8px; }
-  .hero__name .grow{ color:var(--green); }
-  .hero__role{ font-family:var(--mono); font-size:clamp(.8rem,2.4vw,1rem); letter-spacing:.12em; text-transform:uppercase; color:var(--concrete); margin-bottom:34px; }
-  .hero__pitch{ font-size:clamp(1.1rem,2.6vw,1.5rem); max-width:30ch; font-weight:500; margin-bottom:42px; }
-  .hero__pitch b{ color:var(--green); font-weight:700; }
-  .hero__contact{ display:flex; flex-wrap:wrap; gap:8px 26px; font-family:var(--mono); font-size:.82rem; letter-spacing:.04em; color:var(--paper); }
-  .hero__contact a{ color:var(--paper); text-decoration:none; border-bottom:1px solid var(--green); padding-bottom:2px; }
-  .hero__contact a:hover{ color:var(--green); }
-  .hero__sprout{ position:absolute; right:4%; bottom:0; width:clamp(150px,26vw,320px); height:auto; opacity:.95; }
-
-  .section{ padding:96px 0; position:relative; }
-  .sec-head{ margin-bottom:54px; }
-  .sec-head h2{ font-family:var(--display); font-size:clamp(2.2rem,7vw,4.4rem); text-transform:uppercase; line-height:.92; letter-spacing:-.005em; }
-  .sec-head .stamp{ display:block; margin-bottom:14px; }
-
-  .about-grid{ display:grid; grid-template-columns:1.4fr 1fr; gap:54px; align-items:start; }
-  .about-bio p{ font-size:1.12rem; margin-bottom:18px; max-width:46ch; }
-  .about-bio p b{ color:var(--green-deep); }
-  .skills-list{ list-style:none; }
-  .skills-list li{ font-family:var(--mono); font-size:.86rem; letter-spacing:.02em; padding:11px 0; border-top:1px solid var(--line); display:flex; gap:12px; align-items:baseline; }
-  .skills-list li::before{ content:"\25B8"; color:var(--green-deep); }
-  .skills-list li:last-child{ border-bottom:1px solid var(--line); }
-
-  .cases{ padding:40px 0 96px; }
-  .case{ padding:64px 0; border-top:2px solid var(--ink); display:grid; grid-template-columns:88px 1fr; gap:0 34px; }
-  .case__num{ font-family:var(--display); font-size:2.6rem; line-height:1; color:var(--green-deep); }
-  .case__body{ min-width:0; }
-  .case__eyebrow{ margin-bottom:12px; }
-  .case__title{ font-family:var(--display); font-size:clamp(1.8rem,5vw,3rem); text-transform:uppercase; line-height:.95; margin-bottom:6px; }
-  .case__role{ font-family:var(--mono); font-size:.82rem; letter-spacing:.06em; color:var(--concrete); margin-bottom:26px; }
-  .case h4{ font-family:var(--mono); font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:var(--green-deep); margin:26px 0 8px; }
-  .case p{ max-width:62ch; margin-bottom:10px; }
-
-  .metrics{ list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:18px; margin:22px 0 6px; }
-  .metric{ border-left:3px solid var(--green); padding-left:14px; }
-  .metric .big{ font-family:var(--display); font-size:1.9rem; line-height:1; display:block; margin-bottom:4px; }
-  .metric .lbl{ font-size:.86rem; color:var(--concrete); }
-
-  .subproj{ border:1px solid var(--line); border-radius:2px; padding:24px; margin-top:22px; background:var(--paper-2); }
-  .subproj .tag{ font-family:var(--mono); font-size:.7rem; letter-spacing:.16em; text-transform:uppercase; color:var(--green-deep); border:1px solid var(--green-deep); padding:3px 8px; border-radius:2px; display:inline-block; margin-bottom:12px; }
-  .subproj h5{ font-family:var(--display); font-size:1.4rem; text-transform:uppercase; margin-bottom:10px; }
-
-  .gallery{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:22px; }
-  .ph{ aspect-ratio:4/5; border:2px dashed var(--concrete); border-radius:2px; display:flex; align-items:center; justify-content:center; text-align:center; font-family:var(--mono); font-size:.74rem; color:var(--concrete); padding:16px; background:rgba(0,0,0,.02); }
-  .ph.wide{ aspect-ratio:16/9; }
-  .shot{ width:100%; height:100%; object-fit:cover; border-radius:2px; display:block; }
-  img.shot{ aspect-ratio:4/5; }
-  .fullshot{ width:100%; height:auto; display:block; border-radius:2px; margin-top:14px; }
-
-  .videos{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:14px; }
-  .videos video{ width:100%; border-radius:2px; display:block; background:#000; }
-  .vcap{ font-family:var(--mono); font-size:.7rem; letter-spacing:.04em; color:var(--concrete); margin-top:6px; }
-
-  .links{ margin-top:18px; }
-  .links a{ font-family:var(--mono); font-size:.8rem; letter-spacing:.04em; color:var(--ink); text-decoration:none; border-bottom:2px solid var(--green); }
-  .links a:hover{ color:var(--green-deep); }
-
-  .contact{ background:var(--asphalt); color:var(--paper); padding:90px 0; text-align:center; }
-  .contact h2{ font-family:var(--display); font-size:clamp(2.4rem,8vw,5rem); text-transform:uppercase; line-height:.9; margin-bottom:26px; }
-  .contact h2 .grow{ color:var(--green); }
-  .contact__links{ display:flex; flex-wrap:wrap; justify-content:center; gap:14px 34px; font-family:var(--mono); font-size:.9rem; }
-  .contact__links a{ color:var(--paper); text-decoration:none; border-bottom:1px solid var(--green); padding-bottom:3px; }
-  .contact__links a:hover{ color:var(--green); }
-  .foot{ margin-top:48px; font-family:var(--mono); font-size:.7rem; letter-spacing:.18em; color:var(--concrete); text-transform:uppercase; }
-
-  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
-  .reveal.in{ opacity:1; transform:none; }
-  @keyframes sway{ 0%,100%{ transform:rotate(-1.5deg);} 50%{ transform:rotate(1.5deg);} }
-  .leaf{ transform-origin:bottom center; animation:sway 5s ease-in-out infinite; }
-
-  @media (max-width:720px){
-    .about-grid{ grid-template-columns:1fr; gap:32px; }
-    .case{ grid-template-columns:1fr; gap:0; }
-    .case__num{ margin-bottom:6px; }
-    .hero__sprout{ opacity:.4; right:-30px; }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
-    .leaf{ animation:none; }
-    html{ scroll-behavior:auto; }
-  }
-  @media print{
-    @page{ margin:14mm; }
-    *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
-    body::before{ display:none; }
-    .hero{ min-height:auto; padding:30px 0; }
-    .section,.cases,.contact{ padding:30px 0; }
-    .reveal{ opacity:1; transform:none; }
-    .leaf{ animation:none; }
-    .case,.subproj{ break-inside:avoid; }
-  }
+:root{--brick:#aa2e28;--cream:#fefdd7;--caramel:#b26c3b;--stone:#e6d9d4;--wine:#3b1f1b;--ink:#241b18;--muted:#786b61;--line:rgba(59,31,27,.24);--display:"Inter Tight",sans-serif;--mono:"Space Mono",monospace;--max:1440px;--pad:clamp(20px,5vw,76px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--cream);color:var(--wine);font-family:var(--display);-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}::selection{color:var(--cream);background:var(--brick)}.wrap{width:min(100%,var(--max));margin:0 auto;padding-inline:var(--pad)}.mono{font-family:var(--mono);text-transform:uppercase;letter-spacing:.06em;font-size:10px;line-height:1.5}
+.topbar{position:absolute;inset:0 0 auto;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:25px var(--pad);border-bottom:1px solid rgba(254,253,215,.25);color:var(--cream)}.brand{text-decoration:none;font-size:16px;font-weight:900;letter-spacing:-.07em}.topbar nav{display:flex;gap:clamp(16px,3vw,42px);align-items:center}.topbar nav a{text-decoration:none;font-size:12px;font-weight:600}.topbar nav a:hover{color:#f2bca3}.top-ig{border:1px solid rgba(254,253,215,.55);border-radius:999px;padding:9px 14px}
+.hero{min-height:max(690px,92svh);background:var(--brick);color:var(--cream);display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;padding:150px var(--pad) 54px}.hero:before,.hero:after{content:"";position:absolute;aspect-ratio:1;border:1px solid rgba(254,253,215,.23);border-radius:50%;right:-8%;top:7%;width:min(62vw,820px)}.hero:after{right:1%;top:17%;width:min(44vw,590px)}.hero-kicker{position:relative;z-index:1;display:flex;justify-content:space-between;gap:20px;margin-bottom:24px}.hero h1{position:relative;z-index:1;margin:0 0 24px;font-size:clamp(76px,16.2vw,236px);line-height:.77;letter-spacing:-.095em;font-weight:900;max-width:1200px}.hero h1 span{display:block}.hero h1 span:last-child{color:transparent;-webkit-text-stroke:1.5px var(--cream);padding-left:clamp(20px,12vw,180px)}.hero-bottom{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:end;gap:28px;border-top:1px solid rgba(254,253,215,.4);padding-top:19px}.hero-bottom p{max-width:420px;margin:0;font-size:clamp(15px,1.5vw,20px);line-height:1.3;font-weight:500}.hero-meta{text-align:right;white-space:nowrap}.hero-stamp{position:absolute;z-index:1;right:12%;top:27%;width:clamp(75px,11vw,150px);aspect-ratio:1;animation:spin 24s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.section{padding-block:clamp(72px,10vw,150px)}.section-head{display:flex;justify-content:space-between;align-items:start;gap:24px;margin-bottom:clamp(36px,6vw,82px)}.eyebrow{margin:0 0 14px;color:var(--brick)}h2{margin:0;font-size:clamp(44px,8vw,112px);letter-spacing:-.075em;line-height:.85;font-weight:900}.section-intro{max-width:300px;margin:4px 0 0;font-size:15px;line-height:1.45}.count{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}.projects{background:var(--cream)}.project{border-top:1px solid var(--line);padding-top:22px;margin-top:24px}.project-top{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:24px}.project-number{color:var(--brick)}.project-top h3{margin:0 auto 0 0;font-size:clamp(34px,6vw,76px);line-height:.9;letter-spacing:-.065em;font-weight:900}.project-top .mono:last-child{text-align:right}.project-visual{position:relative;overflow:hidden;background:var(--stone)}.project-visual img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}.project-visual:hover img{transform:scale(1.025)}.namata-cover{display:grid;grid-template-columns:1.35fr .65fr;min-height:500px;gap:8px}.namata-cover .large{min-height:500px}.namata-cover .stack{display:grid;grid-template-rows:1fr 1fr;gap:8px;min-height:500px}.project-info{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:24px;padding:25px 0 12px}.project-info p{margin:0;font-size:14px;line-height:1.5}.info-label{color:var(--muted);margin-bottom:8px!important}.metrics{display:grid;grid-template-columns:repeat(3,1fr);background:var(--wine);color:var(--cream);margin-top:32px}.metric{padding:clamp(20px,3vw,42px);border-right:1px solid rgba(254,253,215,.25)}.metric:last-child{border-right:0}.metric strong{display:block;font-size:clamp(35px,5vw,68px);line-height:.9;letter-spacing:-.07em}.metric span{display:block;margin-top:15px;max-width:190px;font-family:var(--mono);font-size:10px;text-transform:uppercase;line-height:1.5}.subcases{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,58px);margin-top:clamp(55px,8vw,100px)}.subcase{border-top:1px solid var(--line);padding-top:18px}.subcase-head{display:flex;justify-content:space-between;gap:15px;margin-bottom:18px}.subcase h4{margin:0;font-size:clamp(28px,4vw,48px);letter-spacing:-.06em;line-height:.95}.subcase .visual{height:clamp(230px,34vw,460px);background:var(--stone);overflow:hidden}.subcase p{max-width:560px;font-size:14px;line-height:1.55}.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.pill{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--wine);border-radius:99px;padding:10px 14px;font-family:var(--mono);font-size:10px;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s}.pill:hover{background:var(--wine);color:var(--cream)}
+.podcast{background:var(--stone)}.podcast .eyebrow{color:var(--wine)}.podcast-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,58px);align-items:start}.podcast-images{display:grid;grid-template-columns:1fr 1fr;gap:8px}.podcast-images .tall{grid-row:span 2;min-height:460px}.podcast-images .short{min-height:225px}.podcast-copy h3{margin:0 0 24px;font-size:clamp(42px,6vw,84px);line-height:.86;letter-spacing:-.08em}.podcast-copy>p{font-size:16px;line-height:1.6;max-width:520px}.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin:25px 0}.tag{border:1px solid var(--line);padding:8px 10px;font-family:var(--mono);font-size:9px;text-transform:uppercase}
+.events{background:var(--wine);color:var(--cream)}.events .eyebrow{color:#f0a68a}.events .section-intro,.events .count{color:rgba(254,253,215,.72)}.events .project{border-color:rgba(254,253,215,.3)}.event-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.event-card{min-width:0}.event-image{aspect-ratio:1.08/1;background:var(--brick);overflow:hidden;position:relative}.event-image img{transition:transform .7s}.event-card:hover .event-image img{transform:scale(1.03)}.event-placeholder{height:100%;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,4vw,48px);background:var(--caramel);color:var(--wine)}.event-placeholder .big-word{font-size:clamp(42px,8vw,105px);line-height:.78;letter-spacing:-.09em;font-weight:900;overflow-wrap:anywhere}.event-placeholder .mono{font-size:10px}.event-card:nth-child(2) .event-placeholder{background:var(--stone)}.event-title{display:flex;justify-content:space-between;gap:14px;align-items:baseline;margin:17px 0 8px}.event-title h3{font-size:clamp(28px,4vw,48px);line-height:.9;letter-spacing:-.06em;margin:0}.event-card>p{max-width:540px;font-size:14px;line-height:1.5;color:rgba(254,253,215,.78)}
+.closing{background:var(--brick);color:var(--cream);padding-block:clamp(70px,10vw,140px) 30px}.closing h2{font-size:clamp(58px,11vw,160px);max-width:1050px}.closing-row{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-top:55px;padding-top:20px;border-top:1px solid rgba(254,253,215,.4)}.closing-row p{max-width:400px;line-height:1.5}.contact-link{font-size:clamp(20px,3vw,32px);font-weight:700;text-decoration-thickness:1px;text-underline-offset:5px}footer{display:flex;justify-content:space-between;gap:20px;padding-top:65px;font-family:var(--mono);text-transform:uppercase;font-size:9px;color:rgba(254,253,215,.72)}.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}.delay-1{transition-delay:.12s}.delay-2{transition-delay:.22s}
+@media(max-width:760px){.topbar{padding-block:18px}.topbar nav a:not(.top-ig){display:none}.hero{min-height:94svh;padding-bottom:28px}.hero h1{font-size:clamp(68px,18vw,130px)}.hero-stamp{top:23%;right:8%}.hero-kicker{flex-direction:column;gap:8px}.hero-bottom{align-items:start;flex-direction:column}.hero-meta{text-align:left}.section-head{flex-direction:column}.section-intro{max-width:440px}.namata-cover{grid-template-columns:1fr;min-height:0}.namata-cover .large{min-height:360px}.namata-cover .stack{grid-template-columns:1fr 1fr;grid-template-rows:150px;min-height:0}.project-info{grid-template-columns:1fr 1fr}.project-info>div:last-child{grid-column:1/-1}.metrics{grid-template-columns:1fr}.metric{border-right:0;border-bottom:1px solid rgba(254,253,215,.25)}.metric:last-child{border-bottom:0}.subcases,.podcast-grid{grid-template-columns:1fr}.subcase .visual{height:300px}.podcast-images .tall{min-height:340px}.podcast-images .short{min-height:165px}.event-grid{grid-template-columns:1fr;gap:42px}.event-image{aspect-ratio:1.15/1}.closing-row{align-items:start;flex-direction:column}footer{flex-direction:column;gap:10px;padding-top:45px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}@media print{.topbar{position:absolute}.reveal{opacity:1;transform:none}.pill{text-decoration:underline}}
 </style>
 </head>
 <body>
-
-<!-- ============================== HERO ============================== -->
-<header class="hero">
-  <div class="wrap">
-    <span class="stamp stamp--light hero__eyebrow">Portfólio · 2026 · Sorocaba — SP</span>
-    <h1 class="hero__name">João <span class="grow">Felix</span></h1>
-    <p class="hero__role">Atendimento · Estratégia · Branding · Conteúdo · Web</p>
-    <p class="hero__pitch">Publicidade que <b>sai do papel e dá resultado</b>. Do atendimento à direção de arte e ao código.</p>
-    <div class="hero__contact">
-      <a href="https://instagram.com/jfeelix_" target="_blank" rel="noopener">@jfeelix_</a>
-      <a href="mailto:Joao.vframalho@senacsp.edu.br">Joao.vframalho@senacsp.edu.br</a>
-      <span>(15) 99805-7042</span>
-    </div>
-  </div>
-  <svg class="hero__sprout" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect x="0" y="180" width="200" height="40" fill="#2B2117"/>
-    <path d="M88 180 L96 150 L86 138 L100 120 L92 105" stroke="#4a3a28" stroke-width="3" fill="none" stroke-linejoin="round"/>
-    <path d="M100 182 C100 150 98 120 100 96" stroke="#C07A3E" stroke-width="6" stroke-linecap="round"/>
-    <g class="leaf">
-      <path d="M100 120 C76 116 60 96 64 74 C90 76 106 96 100 120 Z" fill="#C07A3E"/>
-      <path d="M100 104 C124 98 142 76 138 54 C112 58 96 80 100 104 Z" fill="#9C5A2A"/>
-      <path d="M100 96 C100 80 102 66 110 52 C112 70 108 86 100 96 Z" fill="#D69A55"/>
-    </g>
-  </svg>
-</header>
-
-<!-- ============================== SOBRE ============================== -->
-<section class="section" id="sobre">
-  <div class="wrap">
-    <div class="about-grid">
-      <div class="about-bio reveal">
-        <span class="stamp" style="margin-bottom:14px;">Sobre</span>
-        <p>Estudante de <b>Publicidade e Propaganda no SENAC</b>, criador de conteúdo e apaixonado por resolver problemas reais com comunicação. Baseado em Sorocaba.</p>
-        <p>Atuo em toda a régua de uma campanha: <b>prospecção e atendimento</b>, estratégia, direção de arte, copy e desenvolvimento web. Tenho marca própria, a orgâniCo, e já entreguei resultado concreto para clientes reais.</p>
-        <p>Meu foco é simples: transformar a dor de um negócio em estratégia, e a estratégia em peça que entra no ar e gera resultado.</p>
-      </div>
-      <div class="reveal">
-        <span class="stamp" style="margin-bottom:14px;">O que eu faço</span>
-        <ul class="skills-list">
-          <li>Atendimento &amp; prospecção de clientes</li>
-          <li>Estratégia e planejamento de campanha</li>
-          <li>Branding &amp; identidade visual</li>
-          <li>Copywriting</li>
-          <li>Social media e calendário de conteúdo</li>
-          <li>Roteiro &amp; podcast</li>
-          <li>Direção de arte</li>
-          <li>Web · HTML · CSS · JS</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+<header class="topbar"><a class="brand" href="#inicio" aria-label="João Felix, início">JFELIX®</a><nav aria-label="Navegação principal"><a href="#projetos">Projetos</a><a href="#eventos">Eventos</a><a href="#podcast">Podcast</a><a class="top-ig" href="https://instagram.com/jfeelix_" target="_blank" rel="noreferrer">Instagram ↗</a></nav></header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-kicker mono"><span>João Felix · Portfólio selecionado</span><span>Sorocaba — SP · 2026</span></div>
+<svg class="hero-stamp" viewBox="0 0 160 160" fill="none" aria-hidden="true"><g fill="#fefdd7"><ellipse cx="80" cy="31" rx="14" ry="27"/><ellipse cx="80" cy="129" rx="14" ry="27"/><ellipse cx="31" cy="80" rx="27" ry="14"/><ellipse cx="129" cy="80" rx="27" ry="14"/><ellipse cx="45.5" cy="45.5" rx="14" ry="27" transform="rotate(-45 45.5 45.5)"/><ellipse cx="114.5" cy="114.5" rx="14" ry="27" transform="rotate(-45 114.5 114.5)"/><ellipse cx="114.5" cy="45.5" rx="14" ry="27" transform="rotate(45 114.5 45.5)"/><ellipse cx="45.5" cy="114.5" rx="14" ry="27" transform="rotate(45 45.5 114.5)"/></g><circle cx="80" cy="80" r="13" fill="#aa2e28"/></svg>
+<h1><span>Projetos</span><span>& Eventos</span></h1><div class="hero-bottom"><p>Ideias que viram experiência: campanhas, conteúdo, projetos autorais e eventos.</p><div class="hero-meta mono">Atendimento · Estratégia · Produção<br>Campanhas · Conteúdo · Experiência</div></div>
 </section>
-
-<!-- ============================== CASES ============================== -->
-<section class="cases" id="trabalhos">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="stamp">Projetos selecionados</span>
-      <h2>Trabalhos</h2>
-    </div>
-
-    <!-- ============ CASE 01 — JAGUARETÊ / NAMATA ============ -->
-    <article class="case reveal">
-      <div class="case__num">01</div>
-      <div class="case__body">
-        <span class="stamp case__eyebrow">Atendimento · Prospecção · Estratégia</span>
-        <h3 class="case__title">Jaguaretê · Agência</h3>
-        <p class="case__role">Criação da agência · Atendimento ao cliente</p>
-
-        <img class="fullshot" src="img/img-01.jpg" alt="Logo da agência Jaguaretê&amp;Co">
-        <img class="fullshot" src="img/img-02.jpg" alt="Quem somos — Jaguaretê&amp;Co">
-
-        <div class="agency-intro">
-          <p>A <b>Jaguaretê&amp;Co.</b> é uma agência de publicidade criada por alunos do SENAC, com raízes brasileiras e visão global. O nome vem do tupi-guarani: a onça-pintada, símbolo de força, instinto e singularidade.</p>
-          <p>Dentro da agência, atuei como <b>responsável pelo atendimento</b>, ocupando a linha de frente da relação com o cliente: da prospecção à gestão do briefing, passando por cada etapa até a entrega final.</p>
-        </div>
-
-        <h3 class="case__client-title">O cliente: Namata</h3>
-        <p>Prospectei e trouxe o <b>Namata</b>, bar e restaurante em Sorocaba com mais de <b>35 mil seguidores</b> no Instagram, como cliente da Jaguaretê. Conduzi toda a relação comercial com o cliente do início ao fim.</p>
-        <img class="fullshot" src="img/img-03.jpg" alt="Logo Na Mata Bar e Restaurante" style="max-width:170px; margin:14px auto 0; display:block;">
-        <img class="fullshot" src="img/img-04.jpg" alt="Perfil do Na Mata no Instagram" style="max-width:760px;">
-
-        <h4>A dor do cliente</h4>
-        <p>O Namata enfrentava um desafio comum na gastronomia: <b>casas vazias de terça a quinta</b>. A missão era clara: criar ações que justificassem a saída do público no meio da semana. Desenvolvemos duas campanhas com identidades próprias para resolver exatamente isso.</p>
-
-        <!-- Campanha 1 -->
-        <div class="subproj">
-          <span class="tag">Campanha 01 · Quarta-feira</span>
-          <h5>Quarta-feira Delas</h5>
-          <p>Uma noite reservada ao público feminino — “Confraternização das Amigas” —, com reserva antecipada individual ou em grupo. O ingresso saía por <b>R$70/pessoa</b> e incluía a taça e um kit completo: mais de 20 cores para personalizar a taça, selante de acabamento, kit de pincéis, pano de limpeza e sacola ecológica para levar tudo sem sujar roupa ou carro.</p>
-          <ul class="metrics">
-            <li class="metric"><span class="big">R$13.500</span><span class="lbl">faturamento na noite (quarta comum: R$0 a R$1.500)</span></li>
-            <li class="metric"><span class="big">65%</span><span class="lbl">clientes novos, que nunca tinham ido ao Namata</span></li>
-            <li class="metric"><span class="big">6</span><span class="lbl">avaliações 5★ espontâneas no Google</span></li>
-            <li class="metric"><span class="big">100%</span><span class="lbl">satisfação em ambiente, atendimento, estrutura e kit</span></li>
-          </ul>
-          <p style="margin-top:14px;">A repercussão nas redes sociais gerou novos leads organicamente. A campanha <b>segue ativa, crescendo a cada edição</b> e consolidando o Namata como referência de experiência para o público feminino na cidade.</p>
-
-          <div class="gallery">
-            <img class="shot" src="img/img-05.png" alt="Peça Confraternização das Amigas — Quarta-feira Delas">
-            <img class="shot" src="img/img-06.jpg" alt="Peça Uma noite só delas — Quarta-feira Delas">
-          </div>
-
-                    <div class="video-links">
-            <a class="video-btn" href="https://www.instagram.com/reel/DQuHNK-DYhn/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Ver vídeo 1 no Instagram
-            </a>
-            <a class="video-btn" href="https://www.instagram.com/reel/DRaj61Vjy3v/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Ver vídeo 2 no Instagram
-            </a>
-          </div>
-        </div>
-
-        <!-- Campanha 2 -->
-        <div class="subproj">
-          <span class="tag">Campanha 02 · Ter–Qui</span>
-          <h5>Esquenta da Copa</h5>
-          <p>Com a Copa do Mundo se aproximando, identificamos uma oportunidade: transformar a semana que antecede o torneio em um evento por si só. De terça a quinta, o Namata exibiu as reprises dos <b>3 últimos títulos do Brasil em Copas</b>, criando um aquecimento emocional que atraiu público e gerou expectativa.</p>
-          <p><b>Minha autoria:</b> a concepção e o desenvolvimento dessa campanha partiram inteiramente de mim. Fui responsável pela ideia, pelo roteiro, pela criação e edição dos vídeos e por toda a execução da estratégia de comunicação.</p>
-
-          <h4 style="margin-top:18px;">Resultados</h4>
-          <p>A divulgação orgânica e os vídeos do Esquenta <b>converteram diretamente em público nos jogos oficiais do Brasil</b>. No primeiro jogo da Seleção, o Namata estava lotado mesmo diante da forte concorrência da região. O público veio porque já conhecia o espaço: viu o ambiente preparado e o <b>telão</b>, que se tornou o grande diferencial do restaurante durante o torneio.</p>
-          <ul class="metrics">
-            <li class="metric"><span class="big">R$5–19 mil</span><span class="lbl">faturamento médio diário durante o Esquenta</span></li>
-            <li class="metric"><span class="big">R$30 mil+</span><span class="lbl">por dia de jogo do Brasil, já na Copa</span></li>
-          </ul>
-
-          <div class="gallery" style="grid-template-columns:1fr;">
-            <img class="fullshot" src="img/img-07.jpg" alt="Carrossel Reprises da Copa — Esquenta da Copa">
-            <img class="fullshot" src="img/img-08.jpg" alt="Stories — Esquenta da Copa">
-          </div>
-
-          <h4 style="margin-top:22px;">E ainda: o site da Copa</h4>
-          <p>Para ampliar o engajamento, desenvolvi um site dedicado à campanha: um hub onde o público acompanha os <b>jogos transmitidos no Namata</b> e as <b>pontuações ao vivo das seleções</b>. A plataforma manteve o restaurante presente na rotina digital dos clientes durante toda a Copa.</p>
-          <div class="links">
-            <a href="https://nacopa-namata.vercel.app/" target="_blank" rel="noopener">Acessar o site → nacopa-namata.vercel.app</a>
-          </div>
-          <div class="gallery" style="grid-template-columns:1fr;">
-            <img class="fullshot" src="img/img-09.jpg" alt="Site da Copa do Mundo · Namata">
-          </div>
-                    <div class="site-box">
-            <div class="site-box__info">
-              <p>Acesse o site da campanha</p>
-              <strong>nacopa-namata.vercel.app</strong>
-            </div>
-            <a class="site-box__btn" href="https://nacopa-namata.vercel.app/" target="_blank" rel="noopener">Acessar o site →</a>
-          </div>
-        </div>
-
-        <h4>Calendário editorial da Copa</h4>
-        <p>Para organizar a comunicação da Copa, montei um <b>calendário editorial no Notion</b>: banco de dados com data, arte (PNG), legenda, formato, plataforma e status, além de visões de <b>calendário, galeria, “A postar” e “Concluído”</b>. O cliente baixa a arte e posta sozinho, sem depender de ninguém.</p>
-        <div class="gallery" style="grid-template-columns:1fr;">
-          <img class="fullshot" src="img/img-10.jpg" alt="Capa do calendário editorial no Notion">
-          <img class="fullshot" src="img/img-11.jpg" alt="Calendário de postagens da Copa no Notion">
-        </div>
-
-        <div class="links">
-          <a href="https://www.instagram.com/namatasorocaba" target="_blank" rel="noopener">Instagram do cliente → @namatasorocaba</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- ============ CASE 02 — orgâniCo ============ -->
-    <article class="case reveal">
-      <div class="case__num">02</div>
-      <div class="case__body">
-        <span class="stamp case__eyebrow">Branding · Identidade visual · Produto</span>
-        <h3 class="case__title">orgâniCo</h3>
-        <p class="case__role">Projeto pessoal em desenvolvimento</p>
-        <p>A orgâniCo é um projeto pessoal em construção, com lançamento previsto para breve. É uma marca de streetwear brasileiro com raízes na cultura urbana, mas com uma proposta que vai muito além da roupa.</p>
-        <p>O diferencial está no detalhe: todas as peças chegarão em <b>embalagens sustentáveis ou reutilizáveis</b>, sem desperdício. E em cada pedido, um <b>envelope com sementes de plantas</b> acompanha um panfleto ensinando a cultivar. Quem compra uma orgâniCo não leva só roupa. Leva algo vivo pra casa.</p>
-        <p>O posicionamento é na <b>cultura urbana, na periferia e na autenticidade de rua</b>. Todo o conceito, identidade visual, paleta e sistema de marca foram desenvolvidos por mim, do zero.</p>
-        <h4>Identidade &amp; Mockup</h4>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; align-items:start;">
-          <img class="fullshot" src="img/img-12.jpg" alt="Logo orgâniCo" style="background:#fff; padding:18px; border-radius:2px;">
-          <img class="fullshot" src="img/img-13.jpg" alt="Mockup da camiseta oversized orgâniCo">
-        </div>
-        <h4>Estudos de design para coleções</h4>
-        <div style="display:grid; grid-template-columns:auto 1fr; gap:14px; margin-top:14px; align-items:start;">
-          <img src="img/img-14.jpg" alt="Designs de camisetas orgâniCo" style="height:380px; width:auto; object-fit:cover; border-radius:2px; display:block;">
-          <img src="img/img-15.jpg" alt="Designs de camisetas orgâniCo" style="width:100%; height:380px; object-fit:cover; border-radius:2px; display:block;">
-        </div>
-      </div>
-    </article>
-
-    <!-- ============ CASE 03 — SSL (Semana Senac de Leitura) ============ -->
-    <article class="case reveal">
-      <div class="case__num">03</div>
-      <div class="case__body">
-        <span class="stamp case__eyebrow">Pesquisa · Roteiro · Filmagem · Design · Podcast</span>
-        <h3 class="case__title">SSL · Semana Senac de Leitura</h3>
-        <p class="case__role">11ª Edição · Projeto com o SENAC · "Brasil com S"</p>
-
-        <img class="fullshot" src="img/img-16.jpg" alt="Capa da 11ª Semana Senac de Leitura" style="max-width:340px; margin:14px auto; display:block;">
-
-        <p>Projeto multidisciplinar desenvolvido dentro da <b>11ª edição da Semana Senac de Leitura</b>, com o tema <b>"Brasil com S: Raízes e Saberes"</b>. A proposta foi mergulhar nas regiões do país por meio de pesquisa, conteúdo audiovisual, design e podcast, celebrando a diversidade cultural brasileira em palavras e imagens.</p>
-
-        <h4>Minha contribuição</h4>
-        <p>Fui responsável pela <b>pesquisa aprofundada sobre a Região Sul</b>, cobrindo identidade, cultura e saberes dos três estados. Escrevi o <b>roteiro dos vídeos</b> e participei diretamente das <b>filmagens</b>. No podcast, atuei tanto no <b>desenvolvimento do roteiro quanto na gravação</b> dos episódios, publicados no Spotify. Também colaborei na <b>criação do design de marca do projeto</b> e no desenvolvimento das <b>páginas visuais</b> que compõem a identidade visual da publicação.</p>
-
-        <h4>Design de marca e páginas</h4>
-        <img class="fullshot" src="img/img-17.jpg" alt="Design de marca e páginas visuais · SSL">
-
-        <h4>Podcast no Spotify</h4>
-        <a href="https://open.spotify.com/show/44yTIeB0pZeUWQZuPdB0HI" target="_blank" rel="noopener" class="video-btn" style="margin-top:10px; display:inline-flex;">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;flex-shrink:0;"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424a.623.623 0 01-.857.207c-2.348-1.435-5.304-1.76-8.785-.964a.623.623 0 11-.277-1.215c3.809-.87 7.076-.496 9.712 1.115.294.18.387.563.207.857zm1.223-2.722a.78.78 0 01-1.072.257C14.14 12.24 10.388 11.7 7.667 12.5a.78.78 0 01-.96-.52.781.781 0 01.52-.96c3.098-.94 6.95-.484 9.576 1.109a.78.78 0 01.006 1.573zm.105-2.835C15.012 9.006 9.52 8.823 6.778 9.65a.937.937 0 11-.543-1.794c3.144-.953 8.37-.768 11.67 1.348a.937.937 0 01-1.09 1.663z"/></svg>
-          Ouvir no Spotify → Brasil com S
-        </a>
-
-        <h4>Pesquisa · Região Sul</h4>
-        <p>A apresentação completa com a pesquisa sobre a Região Sul, incluindo cultura, história e identidade dos três estados, está disponível abaixo.</p>
-        <a href="https://canva.link/xaycxfm7rww5xad" target="_blank" rel="noopener" class="presentation-btn">Ver apresentação completa →</a>
-        <img class="fullshot" src="img/img-18.jpg" alt="Capa da apresentação · Região Sul" style="margin-top:14px;">
-      </div>
-    </article>
-
-    <!-- ============ CASE 04 — Café com Publis ============ -->
-    <article class="case reveal">
-      <div class="case__num">04</div>
-      <div class="case__body">
-        <span class="stamp case__eyebrow">Web · Desenvolvimento</span>
-        <h3 class="case__title">Site · Café com Publis</h3>
-        <p class="case__role">Design + código · HTML · CSS · JS</p>
-        <p>Desenvolvido como <b>demonstração prática de criação com HTML e CSS puro</b>, o site do Café com Publis, projeto da turma de Publicidade e Propaganda do SENAC Sorocaba, foi estruturado do zero: design responsivo, tipografia criteriosamente pareada e layout que comunica antes mesmo de o usuário ler uma linha.</p>
-        <div class="gallery" style="grid-template-columns:1fr;">
-          <img class="fullshot" src="img/img-19.jpg" alt="Print do site Café com Publis">
-        </div>
-      </div>
-    </article>
-
-    <!-- ============ CASE 05 — Calendário editorial (Notion) ============
-         REMOVIDO: o calendário editorial agora faz parte do CASE 01 (Namata),
-         como "Calendário editorial da Copa".
-    -->
-
-    <!-- ====================================================================
-         PARA ADICIONAR UM NOVO PROJETO: copie o bloco abaixo, cole acima
-         deste comentário e preencha.
-    =====================================================================
-    <article class="case">
-      <div class="case__num">05</div>
-      <div class="case__body">
-        <span class="stamp case__eyebrow">Categoria · Categoria</span>
-        <h3 class="case__title">Nome do projeto</h3>
-        <p class="case__role">Seu papel</p>
-        <p>Descrição: contexto, o que você fez e o resultado.</p>
-        <div class="gallery">
-          <div class="ph">Imagem 1</div>
-          <div class="ph">Imagem 2</div>
-        </div>
-      </div>
-    </article>
-    -->
-
-  </div>
-</section>
-
-<!-- ============================== CONTATO ============================== -->
-<footer class="contact" id="contato">
-  <div class="wrap">
-    <span class="stamp stamp--light" style="margin-bottom:20px;">Vamos conversar</span>
-    <h2>Bora <span class="grow">crescer</span><br>junto?</h2>
-    <div class="contact__links">
-      <a href="https://instagram.com/jfeelix_" target="_blank" rel="noopener">@jfeelix_</a>
-      <a href="mailto:Joao.vframalho@senacsp.edu.br">Joao.vframalho@senacsp.edu.br</a>
-      <span>(15) 99805-7042</span>
-    </div>
-    <p class="foot">João Victor Felix Ramalho · Sorocaba — SP · Portfólio 2026</p>
-  </div>
-</footer>
-
+<section class="section projects" id="projetos"><div class="wrap">
+<div class="section-head reveal"><div><p class="eyebrow mono">01 / Projetos em destaque</p><h2>Do conceito<br>à rua.</h2></div><p class="section-intro">Trabalho entre estratégia, criação e execução — com atenção à ideia e à experiência de quem participa.</p></div>
+<article class="project reveal"><div class="project-top"><span class="project-number mono">CASE 01</span><h3>Namata</h3><span class="mono">2025—2026</span></div>
+<div class="namata-cover"><div class="project-visual large"><img src="img/img-01.jpg" alt="Projeto Namata — imagem principal" loading="lazy"></div><div class="stack"><div class="project-visual"><img src="img/img-02.jpg" alt="Campanha e comunicação Namata" loading="lazy"></div><div class="project-visual"><img src="img/img-03.jpg" alt="Conteúdo visual do projeto Namata" loading="lazy"></div></div></div>
+<div class="project-info"><div><p class="info-label mono">Cliente / Segmento</p><p>Namata · Bar e restaurante</p></div><div><p class="info-label mono">Atuação</p><p>Atendimento, estratégia, campanhas, conteúdo e articulação de entregas com equipe criativa.</p></div><div><p class="info-label mono">Frentes do case</p><p>Quarta-feira Delas · Esquenta da Copa</p></div></div>
+<div class="metrics reveal"><div class="metric"><strong>02</strong><span>Campanhas reunidas em um mesmo case</span></div><div class="metric"><strong>360°</strong><span>Da ideia e planejamento à execução</span></div><div class="metric"><strong>25/26</strong><span>Período do projeto</span></div></div>
+<div class="subcases">
+<section class="subcase reveal"><div class="subcase-head"><span class="mono">01A / Campanha</span><span class="mono">Namata</span></div><h4>Quarta-feira<br>Delas</h4><div class="visual project-visual" style="margin-top:20px"><img src="img/img-04.jpg" alt="Campanha Quarta-feira Delas para o Namata" loading="lazy"></div><p>Campanha pensada para fortalecer a comunicação da noite, organizar a mensagem e conectar a proposta do evento à experiência do público.</p><div class="links"><a class="pill" href="https://www.instagram.com/reel/DQuHNK-DYhn/" target="_blank" rel="noreferrer">Ver conteúdo ↗</a><a class="pill" href="https://www.instagram.com/namatasorocaba" target="_blank" rel="noreferrer">Namata no Instagram ↗</a></div></section>
+<section class="subcase reveal delay-1"><div class="subcase-head"><span class="mono">01B / Campanha</span><span class="mono">Namata</span></div><h4>Esquenta<br>da Copa</h4><div class="visual project-visual" style="margin-top:20px"><img src="img/img-07.jpg" alt="Campanha Esquenta da Copa para o Namata" loading="lazy"></div><p>Campanha temática com desdobramentos digitais, calendário editorial e uma página dedicada para reunir as informações da ação.</p><div class="links"><a class="pill" href="https://www.instagram.com/reel/DRaj61Vjy3v/" target="_blank" rel="noreferrer">Ver conteúdo ↗</a><a class="pill" href="https://nacopa-namata.vercel.app/" target="_blank" rel="noreferrer">Ver página da campanha ↗</a></div><div class="project-visual" style="height:180px;margin-top:12px"><img src="img/img-10.jpg" alt="Calendário editorial da campanha Esquenta da Copa" loading="lazy"></div></section>
+</div></article></div></section>
+<section class="section podcast" id="podcast"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow mono">02 / Conteúdo e audiovisual</p><h2>Histórias<br>em voz alta.</h2></div><p class="section-intro">Pesquisa, roteiro e produção de conteúdo em formato de podcast, conectando pauta, narrativa e identidade visual.</p></div>
+<div class="podcast-grid"><div class="podcast-images reveal"><div class="project-visual tall"><img src="img/img-16.jpg" alt="Brasil com S — podcast da Semana Senac de Leitura" loading="lazy"></div><div class="project-visual short"><img src="img/img-17.jpg" alt="Registro de produção do podcast Brasil com S" loading="lazy"></div><div class="project-visual short"><img src="img/img-18.jpg" alt="Materiais visuais do podcast Brasil com S" loading="lazy"></div></div>
+<div class="podcast-copy reveal delay-1"><p class="eyebrow mono">CASE 02 · SSL / Semana Senac de Leitura</p><h3>Brasil<br>com S.</h3><p>Projeto de podcast desenvolvido no contexto da Semana Senac de Leitura. Atuação em pesquisa, roteiro, filmagem e design, colaborando para transformar o tema em uma narrativa audiovisual.</p><div class="tag-list"><span class="tag">Pesquisa</span><span class="tag">Roteiro</span><span class="tag">Filmagem</span><span class="tag">Design</span><span class="tag">Conteúdo</span></div><div class="links"><a class="pill" href="https://open.spotify.com/show/44yTIeB0pZeUWQZuPdB0HI" target="_blank" rel="noreferrer">Ouvir no Spotify ↗</a><a class="pill" href="https://canva.link/xaycxfm7rww5xad" target="_blank" rel="noreferrer">Ver apresentação ↗</a></div></div></div></div></section>
+<section class="section events" id="eventos"><div class="wrap"><div class="section-head reveal"><div><p class="eyebrow mono">03 / Experiências ao vivo</p><h2>O evento<br>acontece.</h2></div><p class="section-intro">Projetos ligados à experiência do público, comunicação e dinâmica de eventos. Esta seção pode crescer com registros e entregas específicas.</p></div>
+<div class="event-grid">
+<article class="event-card reveal"><div class="event-image"><!-- Substitua o bloco abaixo por uma imagem quando o arquivo do Sorofolia estiver no repositório: <img src="img/ARQUIVO-SOROFOLIA.jpg" alt="Registro do Sorofolia" loading="lazy"> --><div class="event-placeholder"><span class="mono">Evento / Sorocaba</span><span class="big-word">SORO<br>FOLIA</span><span class="mono">Comunicação · Experiência · Produção</span></div></div><div class="event-title"><h3>Sorofolia</h3><span class="mono">Evento</span></div><p>Projeto de evento incluído no portfólio de experiências. O espaço está preparado para receber registros visuais e uma descrição das responsabilidades específicas.</p></article>
+<article class="event-card reveal delay-1"><div class="event-image"><!-- Substitua o bloco abaixo por uma imagem quando o arquivo do Rodeio Lucky Friends estiver no repositório: <img src="img/ARQUIVO-RODEIO.jpg" alt="Registro do Rodeio Lucky Friends" loading="lazy"> --><div class="event-placeholder"><span class="mono">Evento / Lucky Friends</span><span class="big-word">RODEIO<br>LUCKY<br>FRIENDS</span><span class="mono">Comunicação · Experiência · Produção</span></div></div><div class="event-title"><h3>Rodeio Lucky Friends</h3><span class="mono">Evento</span></div><p>Projeto de evento incluído nesta seleção. Imagens, entregas e escopo de atuação podem ser detalhados quando os materiais estiverem organizados.</p></article>
+</div></div></section>
+<section class="closing" id="contato"><div class="wrap"><p class="eyebrow mono" style="color:#f7c4b0">Vamos conversar?</p><h2>Tem uma ideia?<br>Vamos fazer<br>acontecer.</h2><div class="closing-row"><p>Projetos, campanhas, conteúdo e experiências — aberto a boas conversas e novas colaborações.</p><a class="contact-link" href="mailto:Joao.vframalho@senacsp.edu.br">Me escreva ↗</a></div><footer><span>João Felix® · Projetos & Eventos</span><span>Sorocaba — SP · 2026</span><span><a href="https://instagram.com/jfeelix_" target="_blank" rel="noreferrer">@jfeelix_ ↗</a></span></footer></div></section>
+</main>
 <script>
-  const obsOpts = { threshold:.1, rootMargin:'0px 0px -40px 0px' };
-  const obs = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, obsOpts);
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-  // Anima métricas em cascata
-  document.querySelectorAll('.metric').forEach((el,i)=>{
-    el.classList.add('fade-up');
-    if(i%3===1) el.classList.add('delay-1');
-    if(i%3===2) el.classList.add('delay-2');
-    obs.observe(el);
-  });
-  // Anima subprojetos com escala sutil
-  document.querySelectorAll('.subproj').forEach(el=>{ el.classList.add('fade-scale'); obs.observe(el); });
-  // Anima títulos h4 da esquerda
-  document.querySelectorAll('.case h4, .case__client-title').forEach((el,i)=>{
-    el.classList.add('fade-left');
-    if(i%2===1) el.classList.add('delay-1');
-    obs.observe(el);
-  });
-  // Anima imagens e vídeos
-  document.querySelectorAll('.fullshot, video, .shot').forEach((el,i)=>{
-    el.classList.add('fade-up');
-    if(i%2===1) el.classList.add('delay-1');
-    obs.observe(el);
-  });
+(() => {
+ const items = document.querySelectorAll('.reveal');
+ if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { items.forEach(el => el.classList.add('is-visible')); return; }
+ const observer = new IntersectionObserver((entries, obs) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); } }); }, {threshold:.12, rootMargin:'0px 0px -35px 0px'});
+ items.forEach(el => observer.observe(el));
+})();
 </script>
 </body>
 </html>
