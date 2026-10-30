@@ -60,7 +60,7 @@ h1 .amp{font-weight:400;font-style:italic;color:var(--mute)}
 .btn:active{transform:translateY(0)}
 .btn-line{background:transparent;color:var(--bone);border-color:var(--bone)}
 .btn-line:hover{background:var(--bone);color:var(--ink);transform:translateY(-3px)}
-.cases-index{list-style:none;padding:0;margin-top:3.5rem;border-top:1px solid var(--line)}
+.cases-index{list-style:none;padding:0;margin-top:2rem;border-top:1px solid var(--line)}
 .cases-index a{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);text-decoration:none;font:600 clamp(1.2rem,3vw,1.8rem) var(--display);transition:padding .25s,color .25s}
 .cases-index a:hover{padding-left:1rem;color:var(--blue-soft)}
 .cases-index small{font:400 .95rem var(--body);color:var(--mute);align-self:center}
@@ -79,7 +79,7 @@ h1 .amp{font-weight:400;font-style:italic;color:var(--mute)}
 .capa img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .case:hover .capa img{transform:scale(1.03)}
 .capa b{display:block;color:var(--bone);font-family:var(--display);font-size:1.6rem;margin-bottom:.4rem}
-.case-n{font:800 clamp(4rem,10vw,8rem)/.8 var(--display);color:transparent;-webkit-text-stroke:1.5px var(--blue-soft)}
+.case-n{display:none}
 .case h4{font:800 clamp(2.2rem,6vw,4.5rem)/.95 var(--display);letter-spacing:-.03em;margin:1rem 0}
 .case .cli{color:var(--blue-soft);font-weight:600}
 .case .desc{font-size:1.2rem;max-width:34rem;margin-bottom:1.5rem}

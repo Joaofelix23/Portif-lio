@@ -47,8 +47,8 @@ function renderCase(c, cliente, i) {
   if (c.capa) { const im = el("img"); im.src = c.capa; im.alt = `Capa da campanha ${c.titulo}`; im.width = 800; im.height = 1000; im.loading = i ? "lazy" : "eager"; capa.append(im); }
   else { capa.innerHTML = ""; const b = el("b", null, c.titulo); capa.append(b, document.createTextNode("Espaço para a imagem de capa (4:5)")); }
   const info = el("div");
-  info.append(el("div", "case-n", `Case ${pad(i + 1)}`), el("h4", null, c.titulo), el("p", "cli", `Cliente: ${cliente}`), el("p", "desc", c.descricao));
-  info.firstChild.setAttribute("aria-hidden", "true"); info.querySelector("h4").id = `t-${c.id}`;
+  info.append(el("h4", null, c.titulo), el("p", "cli", `Cliente: ${cliente}`), el("p", "desc", c.descricao));
+  info.querySelector("h4").id = `t-${c.id}`;
   const acoes = el("div", "acoes");
   const ver = el("button", "btn-line", "Ver detalhes +"); ver.type = "button"; ver.setAttribute("aria-expanded", "false"); ver.setAttribute("aria-controls", `d-${c.id}`);
   const ig = el("button", "btn", "VER CONTEÚDOS ↗"); ig.type = "button"; ig.dataset.abrir = c.id;
@@ -73,7 +73,7 @@ PROJETOS.forEach(p => {
   const head = el("div", "cliente-head"); head.append(el("h3", null, `${p.cliente}.`), el("p", null, p.resumo)); sec.append(head);
   p.campanhas.forEach((c, i) => {
     sec.append(renderCase(c, p.cliente, i));
-    const li = el("li"); const a = el("a", null, c.titulo); a.href = `#${c.id}`; a.append(el("small", null, `${p.cliente} · Case ${pad(i + 1)}`)); li.append(a); indice.append(li);
+    const li = el("li"); const a = el("a", null, c.titulo); a.href = `#${c.id}`; a.append(el("small", null, `${p.cliente}`)); li.append(a); indice.append(li);
   });
   raiz.append(sec);
 });

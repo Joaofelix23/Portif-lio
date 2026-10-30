@@ -12,24 +12,24 @@ const CONTATO = {
 const PROJETOS = [
   {
     cliente: "Namata",
-    resumo: "Campanhas estratégicas desenvolvidas para impulsionar o posicionamento, engajamento e faturamento do bar e restaurante.",
+    resumo: "Campanhas estratégicas e gestão direta de redes sociais (calendários editoriais, acompanhamento de métricas e alcance) para impulsionar o posicionamento e faturamento do bar e restaurante.",
     campanhas: [
       {
         id: "noite-das-mulheres",
         titulo: "Noite das Mulheres",
         descricao: "Experiência exclusiva e evento-chave recorrente voltado ao público feminino, unindo arte, socialização e gastronomia.",
         capa: "",
-        contexto: "Criar uma noite temática e exclusiva para o público feminino, incentivando reservas individuais e em grupo. O evento se tornou um dos pilares chave do estabelecimento, sendo realizado até os dias de hoje com diversas edições no ano e constante pedido de bis por clientes novas e recorrentes.",
+        contexto: "A dor do cliente era a baixa movimentação e o subaproveitamento do espaço durante os dias de semana (especialmente às quartas-feiras), além da dificuldade em atrair um público novo e qualificado de forma recorrente.",
         publico: "Mulheres que buscam momentos de lazer, conexão e entretenimento diferenciado.",
-        estrategia: "Experiência all-inclusive com oficina de pintura em taças, acompanhada de boa música e ambiente acolhedor, fortalecendo a comunidade e o fluxo constante em dias de menor movimento.",
-        participacao: "Concepção da experiência, curadoria dos materiais, atendimento e gestão da dinâmica do evento.",
+        estrategia: "Como solução, criamos a 'Noite das Mulheres': uma experiência all-inclusive com oficina de pintura em taças, música e ambiente acolhedor. O projeto solucionou a baixa ocupação convertendo o dia de menor movimento em um sucesso absoluto de público, tornando-se um evento-chave fixo do estabelecimento com altas taxas de recompra e pedidos constantes por novas edições.",
+        participacao: "Concepção da experiência, curadoria dos materiais, atendimento, gestão da dinâmica e gestão completa de conteúdo e redes sociais.",
         acoes: [
-          "Planejamento e estruturação da experiência all-inclusive",
-          "Montagem de kits personalizados (taça, mais de 20 cores, selante, pincéis, pano e ecobag)",
-          "Gestão de reservas e atendimento personalizado",
-          "Manutenção do calendário de edições recorrentes ao longo do ano"
+          "Desenvolvimento de calendários editoriais e estratégias de redes sociais para divulgação",
+          "Acompanhamento contínuo de métricas, alcance e engajamento",
+          "Estruturação da experiência all-inclusive com kits personalizados",
+          "Gestão de reservas e manutenção de edições recorrentes ao longo do ano"
         ],
-        formatos: ["Experiência Presencial", "Divulgação em Redes Sociais", "Stories e Reels"],
+        formatos: ["Experiência Presencial", "Calendário Editorial", "Stories e Reels"],
         galeria: [],
         conteudos: [
           { rotulo: "Ver Reel 1ª Edição ↗", url: "https://www.instagram.com/reel/DQuHNK-DYhn/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" },
@@ -47,16 +47,16 @@ const PROJETOS = [
         titulo: "Esquenta Nacopa",
         descricao: "Aquecimento estratégico de 3 dias para gerar expectativa e preparar o público para a Copa do Mundo.",
         capa: "",
-        contexto: "Transformar a semana que antecede o torneio em um evento próprio, exibindo as reprises dos 3 últimos títulos do Brasil em Copas de terça a quinta.",
+        contexto: "Transformar a semana que antecede o torneio em um evento próprio, exibindo as reprises dos 3 últimos títulos do Brasil em Copas de terça a quinta, com suporte de planejamento editorial nas redes sociais.",
         publico: "Frequentadores do espaço e amantes de futebol em busca de entretenimento e aquecimento para o mundial.",
-        estrategia: "Criar um aquecimento emocional através de exibições históricas e produção de conteúdo orgânico focado em atrair fluxo antecipado para o restaurante.",
-        participacao: "Planejamento de pauta, estratégia de divulgação orgânica e operação de conteúdo.",
+        estrategia: "Criação de aquecimento emocional através de exibições históricas e campanhas editoriais orgânicas focadas em atrair fluxo antecipado para o restaurante.",
+        participacao: "Planejamento de pauta, calendários editoriais, acompanhamento de métricas e operação de conteúdo.",
         acoes: [
+          "Criação e execução de calendário editorial para redes sociais",
           "Exibição de reprises históricas dos títulos do Brasil",
-          "Campanha de vídeos orgânicos de aquecimento",
-          "Atração de fluxo antecipado para o estabelecimento"
+          "Monitoramento de alcance e conversão de público"
         ],
-        formatos: ["Vídeos para Redes Sociais", "Cobertura Ao Vivo", "Stories"],
+        formatos: ["Calendário Editorial", "Vídeos para Redes Sociais", "Stories"],
         galeria: [],
         conteudos: [
           { rotulo: "Ver Reel Esquenta NaCopa ↗", url: "https://www.instagram.com/reel/DZFiu4ARqdo/?utm_source=ig_web_copy_link&mdxt=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
@@ -69,18 +69,18 @@ const PROJETOS = [
       {
         id: "nacopa",
         titulo: "Nacopa",
-        descricao: "Cobertura completa e plataforma digital interativa para os jogos da Copa do Mundo no Namata.",
+        descricao: "Cobertura completa, gestão de redes e plataforma digital interativa para os jogos da Copa do Mundo no Namata.",
         capa: "",
-        contexto: "Posicionar o Namata como o principal ponto de encontro da região para assistir aos jogos da Seleção Brasileira durante o torneio.",
+        contexto: "Posicionar o Namata como o principal ponto de encontro da região para assistir aos jogos da Seleção Brasileira durante o torneio, mantendo forte presença digital.",
         publico: "Torcedores e público geral em busca de uma experiência completa de transmissão de futebol com alta qualidade.",
-        estrategia: "Diferenciação estrutural com telão de destaque, combinado com o lançamento de um site dedicado com tabela de jogos, pontuações ao vivo e game interativo para manter o engajamento digital.",
-        participacao: "Desenvolvimento de plataforma digital, estratégia de experiência do torcedor e coordenação de divulgação.",
+        estrategia: "Diferenciação estrutural com telão de destaque, lançamento de site dedicado com tabela e pontuações ao vivo, aliado a uma forte estratégia de redes sociais e calendários editoriais diários.",
+        participacao: "Gestão de redes sociais, acompanhamento de métricas de alcance, desenvolvimento de plataforma digital e coordenação de divulgação.",
         acoes: [
-          "Criação e lançamento do site oficial da campanha (nacopa-namata.vercel.app)",
-          "Implementação de game de pontuação e painel de horários/jogos",
-          "Estruturação de espaço com telão de alta qualidade"
+          "Desenvolvimento de calendário editorial e cobertura em tempo real",
+          "Lançamento do site oficial da campanha (nacopa-namata.vercel.app)",
+          "Implementação de game de pontuação e painel de horários/jogos"
         ],
-        formatos: ["Plataforma Web / Site", "Conteúdo Digital", "Transmissão ao Vivo"],
+        formatos: ["Plataforma Web / Site", "Redes Sociais", "Transmissão ao Vivo"],
         galeria: [],
         conteudos: [
           { rotulo: "Acessar Site NaCopa ↗", url: "https://nacopa-namata.vercel.app/" },
@@ -124,25 +124,49 @@ const PROJETOS = [
         ]
       },
       {
-        id: "rodeio-lucky-friends",
-        titulo: "Rodeio Lucky Friends",
-        descricao: "Produção e gestão de riders técnico e de camarim em evento de grande porte com 15 mil pessoas.",
+        id: "luau-do-armandinho",
+        titulo: "Luau do Armandinho",
+        descricao: "Coordenação completa de operações de bar, equipes e infraestrutura em evento de grande porte.",
         capa: "",
-        contexto: "Garantir a retaguarda técnica e de hospitalidade artística com precisão e atendimento de alto nível.",
+        contexto: "Gestão eficiente de grande fluxo de público em ambiente de festival de praia/luau, assegurando excelência operacional e agilidade.",
+        publico: "Público amante de shows e grandes experiências musicais (10.000 pessoas).",
+        estrategia: "Planejamento logístico detalhado, definição de layout, mapa do evento e coordenação integrada de equipes.",
+        participacao: "Coordenação da operação do bar, equipes, montagem e desmontagem (pré e pós-evento), além de definição de layout e mapa.",
+        acoes: [
+          "Definição de layout e mapeamento operacional do evento",
+          "Coordenação de montagem e desmontagem (pré e pós-evento)",
+          "Gestão direta da operação de bar e equipes de atendimento"
+        ],
+        formatos: ["Grandes Shows", "Operação de Bar", "Gestão de Logística"],
+        galeria: [],
+        conteudos: [
+          { rotulo: "Ver Reel Luau do Armandinho ↗", url: "https://www.instagram.com/reel/DVMdzfqDkzn/?utm_source=ig_web_copy_link&psln=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
+        ],
+        resultados: [
+          { indicador: "Público", valor: "10 mil", unidade: "pessoas", nota: "Luau do Armandinho" },
+          { indicador: "Operação", valor: "100%", unidade: "", nota: "Eficiência e agilidade no atendimento" }
+        ]
+      },
+      {
+        id: "rodeo-lucky-friends",
+        titulo: "Rodeo Lucky Friends",
+        descricao: "Produção e gestão de riders técnico e de camarim na IX edição de evento de grande porte com 15 mil pessoas.",
+        capa: "",
+        contexto: "Garantir a retaguarda técnica e de hospitalidade artística com precisão e atendimento de alto nível na IX edição do rodeio.",
         publico: "Artistas, equipes técnicas e público do rodeio (15 mil pessoas).",
         estrategia: "Alinhamento minucioso de exigências técnicas, organização de camarins e suporte integral à produção artística.",
         participacao: "Produção e gestão de rider técnico e de camarim.",
         acoes: [
-          "Gestão de rider técnico e atendimento a exigências de camarim",
+          "Gestão de rider técnico e atendimento a exigências de camarim na IX edição",
           "Suporte direto à produção artística e operacional do evento"
         ],
         formatos: ["Eventos Country", "Rodeio", "Produção Artística"],
         galeria: [],
         conteudos: [
-          { rotulo: "Ver Reel Rodeio Lucky Friends ↗", url: "https://www.instagram.com/reel/Cyr0bO8sruC/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
+          { rotulo: "Ver Reel Rodeo Lucky Friends ↗", url: "https://www.instagram.com/reel/Cyr0bO8sruC/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Público", valor: "15 mil", unidade: "pessoas", nota: "Rodeio Lucky Friends" },
+          { indicador: "Público", valor: "15 mil", unidade: "pessoas", nota: "Rodeo Lucky Friends (IX Edição)" },
           { indicador: "Operação", valor: "100%", unidade: "", nota: "Cumprimento rigoroso de riders e exigências" }
         ]
       },
