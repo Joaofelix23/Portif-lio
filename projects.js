@@ -18,7 +18,7 @@ const PROJETOS = [
         id: "noite-das-mulheres",
         titulo: "Noite das Mulheres",
         descricao: "Experiência exclusiva e evento-chave recorrente voltado ao público feminino, unindo arte, socialização e gastronomia.",
-        capa: "",
+        capa: "img/capamulheres.jpg",
         contexto: "A dor do cliente era a baixa movimentação e o subaproveitamento do espaço durante os dias de semana (especialmente às quartas-feiras), além da dificuldade em atrair um público novo e qualificado de forma recorrente.",
         publico: "Mulheres que buscam momentos de lazer, conexão e entretenimento diferenciado.",
         estrategia: "Como solução, criamos a 'Noite das Mulheres': uma experiência all-inclusive com oficina de pintura em taças, música e ambiente acolhedor. O projeto solucionou a baixa ocupação convertendo o dia de menor movimento em um sucesso absoluto de público, tornando-se um evento-chave fixo do estabelecimento com altas taxas de recompra e pedidos constantes por novas edições.",
