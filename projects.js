@@ -17,21 +17,23 @@ const PROJETOS = [
       {
         id: "noite-das-mulheres",
         titulo: "Noite das Mulheres",
-        descricao: "Experiência exclusiva voltada ao público feminino, unindo arte, socialização e gastronomia.",
+        descricao: "Experiência exclusiva e evento-chave recorrente voltado ao público feminino, unindo arte, socialização e gastronomia.",
         capa: "",
-        contexto: "Criar uma noite temática e exclusiva para o público feminino, incentivando reservas individuais e em grupo para confraternizações.",
+        contexto: "Criar uma noite temática e exclusiva para o público feminino, incentivando reservas individuais e em grupo. O evento se tornou um dos pilares chave do estabelecimento, sendo realizado até os dias de hoje com diversas edições no ano e constante pedido de bis por clientes novas e recorrentes.",
         publico: "Mulheres que buscam momentos de lazer, conexão e entretenimento diferenciado.",
-        estrategia: "Experiência all-inclusive com oficina de pintura em taças, acompanhada de boa música e ambiente acolhedor, fortalecendo a comunidade e o fluxo em dias de menor movimento.",
+        estrategia: "Experiência all-inclusive com oficina de pintura em taças, acompanhada de boa música e ambiente acolhedor, fortalecendo a comunidade e o fluxo constante em dias de menor movimento.",
         participacao: "Concepção da experiência, curadoria dos materiais, atendimento e gestão da dinâmica do evento.",
         acoes: [
           "Planejamento e estruturação da experiência all-inclusive",
           "Montagem de kits personalizados (taça, mais de 20 cores, selante, pincéis, pano e ecobag)",
-          "Gestão de reservas e atendimento personalizado"
+          "Gestão de reservas e atendimento personalizado",
+          "Manutenção do calendário de edições recorrentes ao longo do ano"
         ],
         formatos: ["Experiência Presencial", "Divulgação em Redes Sociais", "Stories e Reels"],
         galeria: [],
         conteudos: [
-          { rotulo: "Ver Detalhes da Ação", url: "https://instagram.com/jfeelix_" }
+          { rotulo: "Ver Reel 1ª Edição ↗", url: "https://www.instagram.com/reel/DQuHNK-DYhn/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" },
+          { rotulo: "Ver Reel de Edição Recorrente ↗", url: "https://www.instagram.com/reel/DRaj61Vjy3v/?utm_source=ig_web_copy_link&rpxt=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
           { indicador: "Satisfação", valor: "100%", unidade: "", nota: "Taxa de aprovação do público" },
@@ -56,7 +58,9 @@ const PROJETOS = [
         ],
         formatos: ["Vídeos para Redes Sociais", "Cobertura Ao Vivo", "Stories"],
         galeria: [],
-        conteudos: [],
+        conteudos: [
+          { rotulo: "Ver Reel Esquenta NaCopa ↗", url: "https://www.instagram.com/reel/DZFiu4ARqdo/?utm_source=ig_web_copy_link&mdxt=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
+        ],
         resultados: [
           { indicador: "Faturamento Diário", valor: "R$ 5-15", unidade: "mil", nota: "Média durante o período de esquenta" },
           { indicador: "Conversão", valor: "Direta", unidade: "", nota: "Público do esquenta lotou os jogos oficiais" }
@@ -79,7 +83,8 @@ const PROJETOS = [
         formatos: ["Plataforma Web / Site", "Conteúdo Digital", "Transmissão ao Vivo"],
         galeria: [],
         conteudos: [
-          { rotulo: "Acessar Site NaCopa", url: "https://nacopa-namata.vercel.app/" }
+          { rotulo: "Acessar Site NaCopa ↗", url: "https://nacopa-namata.vercel.app/" },
+          { rotulo: "Ver Reel NaCopa ↗", url: "https://www.instagram.com/reel/DZqh3nrRvH4/?utm_source=ig_web_copy_link&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
           { indicador: "Faturamento Diário", valor: "R$ 5-35", unidade: "mil", nota: "Média durante os dias de jogos da Copa" },
@@ -97,8 +102,8 @@ const PROJETOS = [
         titulo: "Festival Sorofolia",
         descricao: "Coordenação completa de operações de bar, equipes e infraestrutura em um dos maiores festivais da região.",
         capa: "",
-        contexto: "Gestão de grande fluxo de público com eficiência operacional, mantendo alto padrão de atendimento e agilidade.",
-        publico: "Público de grandes festivais de música e entretenimento (crescimento de 7 mil para 12 mil pessoas entre 2024 e 2026).",
+        contexto: "Gestão de grande fluxo de público com eficiência operacional, mantendo alto padrão de atendimento, agilidade e excelência na entrega do evento.",
+        publico: "Público de grandes festivais de música e entretenimento (crescimento constante até atingir mais de 12 mil pessoas).",
         estrategia: "Planejamento logístico rigoroso, definição de layout, mapa do evento e coordenação integrada de equipes de montagem e bar.",
         participacao: "Coordenação da operação do bar, equipes, montagem e desmontagem (pré e pós-evento), além de definição de layout e mapa.",
         acoes: [
@@ -108,7 +113,10 @@ const PROJETOS = [
         ],
         formatos: ["Grandes Festivais", "Operação de Bar", "Gestão de Logística"],
         galeria: [],
-        conteudos: [],
+        conteudos: [
+          { rotulo: "Ver Vídeo do Sorofolia ↗", url: "https://www.instagram.com/reel/DGrchYmvCfh/?utm_source=ig_web_copy_link&exln=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" },
+          { rotulo: "Ver Cobertura do Festival ↗", url: "https://www.instagram.com/reel/DUzSpjUjNtq/?utm_source=ig_web_copy_link&srtk=MzRlODBiNWFlZA==" }
+        ],
         resultados: [
           { indicador: "Edição 2024", valor: "7 mil+", unidade: "pessoas", nota: "Sorofolia" },
           { indicador: "Edição 2025", valor: "10 mil+", unidade: "pessoas", nota: "Sorofolia" },
@@ -130,33 +138,14 @@ const PROJETOS = [
         ],
         formatos: ["Eventos Country", "Rodeio", "Produção Artística"],
         galeria: [],
-        conteudos: [],
+        conteudos: [
+          { rotulo: "Ver Reel Rodeio Lucky Friends ↗", url: "https://www.instagram.com/reel/Cyr0bO8sruC/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
+        ],
         resultados: [
-          { indicador: "Público", valor: "15 mil", unidade: "pessoas", nota: "Rodeio Lucky Friends 2026" },
+          { indicador: "Público", valor: "15 mil", unidade: "pessoas", nota: "Rodeio Lucky Friends" },
           { indicador: "Operação", valor: "100%", unidade: "", nota: "Cumprimento rigoroso de riders e exigências" }
         ]
       },
       {
         id: "eventos-particulares",
-        titulo: "Eventos Corporativos, Casamentos e Festas",
-        descricao: "Atuação personalizada em eventos sociais e corporativos, garantindo excelência de ponta a ponta.",
-        capa: "",
-        contexto: "Entrega de experiências memoráveis alinhadas com as expectativas e objetivos de cada cliente particular ou corporativo.",
-        publico: "Empresas, noivos e organizadores de festas e comemorações exclusivas.",
-        estrategia: "Acompanhamento integral desde a contratação inicial, desenvolvimento do projeto, execução impecável e fechamento pós-evento.",
-        participacao: "Atuação completa da contratação ao desenvolvimento, execução e pós-evento.",
-        acoes: [
-          "Planejamento estratégico e alinhamento de expectativas",
-          "Execução e supervisão no dia do evento",
-          "Gestão de fornecedores e suporte pós-evento"
-        ],
-        formatos: ["Casamentos", "Eventos Corporativos", "Festas Particulares"],
-        galeria: [],
-        conteudos: [],
-        resultados: [
-          { indicador: "Processo", valor: "Pontas", unidade: "unidas", nota: "Da contratação ao pós-evento" }
-        ]
-      }
-    ]
-  }
-];
+        titulo: "Eventos Corporativos, Casamentos
