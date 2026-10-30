@@ -5,7 +5,7 @@
    ========================================================== */
 
 const CONTATO = {
-  email: "",                       // ex.: "seu@email.com" (vazio = botão oculto)
+  email: "Joao.vframalho@senacsp.edu.br", // vazio = botão oculto
   instagram: "https://instagram.com/jfeelix_",
   whatsapp: "https://wa.me/5515998057042",
   linkedin: "https://www.linkedin.com/in/jfeelix/"
