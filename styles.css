@@ -16,26 +16,46 @@ a{color:inherit}
 .skip:focus{top:1rem}
 
 .top{position:sticky;top:0;z-index:20}
-.back{display:flex;justify-content:center;align-items:center;gap:.5rem;min-height:2.5rem;padding:.4rem var(--pad);background:var(--blue);color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;transition:background .2s,color .2s}
-.back:hover{background:var(--bone)}
-.back span{transition:transform .2s}.back:hover span{transform:translateX(-4px)}
-.bar{position:relative;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);background:rgba(23,21,18,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{position:relative;display:flex;justify-content:space-between;align-items:center;padding:1rem var(--pad);background:rgba(23,21,18,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .logo{font:800 1.25rem var(--display);text-decoration:none}
 .bar nav{display:flex;gap:clamp(1rem,3vw,2rem)}
 .bar nav a{text-decoration:none;padding:.4rem 0;background:linear-gradient(var(--blue-soft),var(--blue-soft)) 0 100%/0 2px no-repeat;transition:background-size .25s}
 .bar nav a:hover{background-size:100% 2px}
+
+/* Botão Voltar ao Hub */
+.btn-hub{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.5rem 1.25rem;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.8);
+  background:transparent;
+  color:var(--bone);
+  text-decoration:none;
+  font-weight:700;
+  font-size:.85rem;
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  transition:all .2s ease;
+}
+.btn-hub:hover{
+  background:var(--bone);
+  color:var(--ink);
+  border-color:var(--bone);
+}
 
 /* hero */
 .hero{padding:clamp(2.5rem,7vw,6rem) var(--pad) 2rem}
 .meta{color:var(--mute);font-size:.95rem}
 h1{font:800 clamp(3.2rem,15vw,13rem)/.86 var(--display);letter-spacing:-.045em;margin:1.5rem 0 2.5rem;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
 h1 span{display:inline-block}
-h1 .dot{color:var(--blue)}
+h1 .dot{color:var(--bone)}
 h1 .amp{font-weight:400;font-style:italic;color:var(--mute)}
 @keyframes rise{from{opacity:0;transform:translateY(.12em)}}
 .hero-foot{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:flex-end;justify-content:space-between;max-width:70rem}
 .lead{max-width:34rem;font-size:1.25rem;line-height:1.5}
-.btn,.btn-line{display:inline-block;text-decoration:none;font-weight:600;padding:.95rem 1.5rem;border-radius:999px;border:2px solid var(--blue);background:var(--blue);color:var(--ink);cursor:pointer;font-family:inherit;font-size:1rem;transition:transform .2s,background .2s,color .2s}
+.btn,.btn-line{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:600;padding:.95rem 1.5rem;border-radius:999px;border:2px solid var(--blue);background:var(--blue);color:var(--ink);cursor:pointer;font-family:inherit;font-size:1rem;transition:transform .2s,background .2s,color .2s}
 .btn:hover{transform:translateY(-3px);background:transparent;border-color:var(--bone);color:var(--bone)}
 .btn:active{transform:translateY(0)}
 .btn-line{background:transparent;color:var(--bone);border-color:var(--bone)}
@@ -110,16 +130,18 @@ dialog h2{font:800 2.2rem/1 var(--display);margin:.3rem 2.5rem 1rem 0}
 #m-links{display:grid;gap:.7rem;margin-top:1.5rem}
 #m-links .btn{text-align:center}
 
-@media(max-width:600px){.bar nav{gap:.9rem;font-size:.95rem}.m-box{padding:1.5rem}}
+@media(max-width:768px){
+  .bar{flex-wrap:wrap;gap:1rem}
+  .bar nav{order:3;width:100%;justify-content:center}
+  .m-box{padding:1.5rem}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.case{opacity:1;transform:none}}
 
 /* paleta do hub: vermelho, creme, marrom, taupe, vinho, rosado */
-.back{background:var(--blush)}
-.back:hover{background:var(--bone)}
 .hero{background:var(--red);--mute:#f3cfc4;--line:rgba(255,251,214,.35)}
 .hero .btn{background:var(--bone);border-color:var(--bone);color:var(--red)}
 .hero .btn:hover{background:transparent;color:var(--bone)}
-h1 .dot{color:var(--ink)}
+h1 .dot{color:var(--bone)}
 h1 .amp{color:var(--blush)}
 .cases-index a:hover{color:var(--ink)}
 .capa{border:0;color:var(--blush)}
