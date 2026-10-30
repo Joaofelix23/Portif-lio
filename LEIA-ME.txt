@@ -1,0 +1,13 @@
+JFELIX® — Projetos & Eventos
+
+Arquivos: index.html (estrutura) · styles.css (visual) · main.js (renderização) · projects.js (SEUS DADOS) · img/namata/ (imagens)
+Tudo que você edita fica em projects.js.
+
+Capa:       campanha.capa = "img/namata/arquivo.jpg"  (proporção 4:5)
+Galeria:    campanha.galeria = [{ src: "img/namata/foto.jpg", alt: "descrição" }]
+Instagram:  campanha.conteudos = [{ rotulo: "Reel", url: "https://www.instagram.com/p/..." }]
+            (sem link válido, o modal mostra "serão disponibilizados em breve")
+Resultados: preencha "valor" (e "unidade"/"nota") de cada indicador; pode renomear, remover ou adicionar linhas.
+Textos:     contexto, publico, estrategia, participacao, acoes[], formatos[]
+Contato:    CONTATO.email no topo de projects.js
+Novo cliente/campanha: copie um bloco em PROJETOS.
