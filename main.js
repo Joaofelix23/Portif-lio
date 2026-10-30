@@ -30,17 +30,6 @@ function resultados(c) {
   return s;
 }
 
-function galeria(c) {
-  const wrap = el("section", "bloco"); wrap.append(el("h5", null, "Galeria"));
-  const g = el("div", "galeria");
-  if (c.galeria && c.galeria.length) c.galeria.forEach(f => {
-    const fig = el("figure"); const im = el("img"); im.src = f.src; im.alt = f.alt || ""; im.loading = "lazy"; im.decoding = "async";
-    fig.append(im); g.append(fig);
-  });
-  else [1, .75, 1.3].forEach(r => { const f = el("figure"); const p = el("div", "ph", "Espaço para imagem · galeria em projects.js"); p.style.setProperty("--r", r); f.append(p); g.append(f); });
-  wrap.append(g); return wrap;
-}
-
 function renderCase(c, cliente, i) {
   const art = el("article", "case"); art.id = c.id; art.setAttribute("aria-labelledby", `t-${c.id}`);
   const capa = el("div", "capa");
@@ -58,7 +47,8 @@ function renderCase(c, cliente, i) {
   const bl = el("div", "blocos");
   bl.append(bloco("Contexto e objetivo", c.contexto), bloco("Público-alvo", c.publico), bloco("Estratégia de comunicação", c.estrategia),
     bloco("Minha participação", c.participacao), bloco("Ações realizadas", c.acoes), bloco("Formatos e conteúdos produzidos", c.formatos));
-  det.append(bl, galeria(c), resultados(c));
+  // Galeria removida conforme pedido do usuário
+  det.append(bl, resultados(c));
   ver.addEventListener("click", () => {
     const open = det.classList.toggle("open"); ver.setAttribute("aria-expanded", open);
     ver.textContent = open ? "Fechar detalhes −" : "Ver detalhes +";
