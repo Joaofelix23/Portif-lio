@@ -78,10 +78,34 @@ PROJETOS.forEach(p => {
   raiz.append(sec);
 });
 
-/* contato */
+/* contato com ícones Font Awesome */
 const L = $("#links-contato");
+const icones = {
+  "E-mail": "fa-regular fa-envelope",
+  "Instagram": "fa-brands fa-instagram",
+  "WhatsApp": "fa-brands fa-whatsapp",
+  "LinkedIn": "fa-brands fa-linkedin-in"
+};
+
 [["E-mail", CONTATO.email && `mailto:${CONTATO.email}`], ["Instagram", CONTATO.instagram], ["WhatsApp", CONTATO.whatsapp], ["LinkedIn", CONTATO.linkedin]]
-  .filter(([, u]) => u).forEach(([n, u]) => { const a = el("a", "btn-line", `${n} ↗`); a.href = u; if (u.startsWith("http")) { a.target = "_blank"; a.rel = "noopener noreferrer"; } L.append(a); });
+  .filter(([, u]) => u).forEach(([n, u]) => { 
+    const a = el("a", "btn-line");
+    a.href = u; 
+    
+    if (icones[n]) {
+      const i = document.createElement("i");
+      i.className = icones[n];
+      a.append(i);
+    }
+    
+    a.append(document.createTextNode(` ${n} ↗`));
+    
+    if (u.startsWith("http")) { 
+      a.target = "_blank"; 
+      a.rel = "noopener noreferrer"; 
+    } 
+    L.append(a); 
+  });
 
 /* revelar cases ao rolar */
 const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 }) : null;
