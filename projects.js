@@ -127,7 +127,7 @@ const PROJETOS = [
         id: "luau-do-armandinho",
         titulo: "Luau do Armandinho",
         descricao: "Coordenação completa de operações de bar, equipes e infraestrutura em evento de grande porte.",
-        capa: "",
+        capa: "Luaucapa.jpg",
         contexto: "Gestão eficiente de grande fluxo de público em ambiente de festival de praia/luau, assegurando excelência operacional e agilidade.",
         publico: "Público amante de shows e grandes experiências musicais (10.000 pessoas).",
         estrategia: "Planejamento logístico detalhado, definição de layout, mapa do evento e coordenação integrada de equipes.",
