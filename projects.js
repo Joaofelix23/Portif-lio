@@ -148,4 +148,25 @@ const PROJETOS = [
       },
       {
         id: "eventos-particulares",
-        titulo: "Eventos Corporativos, Casamentos
+        titulo: "Eventos Corporativos, Casamentos e Festas",
+        descricao: "Atuação personalizada em eventos sociais e corporativos, garantindo excelência de ponta a ponta.",
+        capa: "",
+        contexto: "Entrega de experiências memoráveis alinhadas com as expectativas e objetivos de cada cliente particular ou corporativo.",
+        publico: "Empresas, noivos e organizadores de festas e comemorações exclusivas.",
+        estrategia: "Acompanhamento integral desde a contratação inicial, desenvolvimento do projeto, execução impecável e fechamento pós-evento.",
+        participacao: "Atuação completa da contratação ao desenvolvimento, execução e pós-evento.",
+        acoes: [
+          "Planejamento estratégico e alinhamento de expectativas",
+          "Execução e supervisão no dia do evento",
+          "Gestão de fornecedores e suporte pós-evento"
+        ],
+        formatos: ["Casamentos", "Eventos Corporativos", "Festas Particulares"],
+        galeria: [],
+        conteudos: [],
+        resultados: [
+          { indicador: "Processo", valor: "Pontas", unidade: "unidas", nota: "Da contratação ao pós-evento" }
+        ]
+      }
+    ]
+  }
+];
