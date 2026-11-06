@@ -1,8 +1,7 @@
-/* Renderização — não precisa editar. Dados ficam em projects.js */
+/* Renderização — dados ficam em projects.js */
 const $ = (s, r = document) => r.querySelector(s);
 const el = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.textContent = html; return e; };
 const urlOk = u => typeof u === "string" && /^https?:\/\//i.test(u.trim());
-const pad = n => String(n).padStart(2, "0");
 
 function bloco(titulo, conteudo) {
   const b = el("div", "bloco"); b.append(el("h5", null, titulo));
@@ -31,55 +30,96 @@ function resultados(c) {
 }
 
 function renderCase(c, cliente, i) {
-  const art = el("article", "case"); art.id = c.id; art.setAttribute("aria-labelledby", `t-${c.id}`);
-  
-  // Capa (Coluna da Esquerda no Desktop)
+  const art = el("article", "case"); 
+  art.id = c.id; 
+  art.setAttribute("aria-labelledby", `t-${c.id}`);
+
+  // 1. Coluna da Esquerda: Capa
   const capa = el("div", "capa");
-  if (c.capa) { const im = el("img"); im.src = c.capa; im.alt = `Capa da campanha ${c.titulo}`; im.width = 800; im.height = 1000; im.loading = i ? "lazy" : "eager"; capa.append(im); }
-  else { capa.innerHTML = ""; const b = el("b", null, c.titulo); capa.append(b, document.createTextNode("Espaço para a imagem de capa (4:5)")); }
-  
-  // Conteúdo (Coluna da Direita no Desktop)
+  if (c.capa) { 
+    const im = el("img"); 
+    im.src = c.capa; 
+    im.alt = `Capa da campanha ${c.titulo}`; 
+    im.width = 800; 
+    im.height = 1000; 
+    im.loading = i ? "lazy" : "eager"; 
+    capa.append(im); 
+  } else { 
+    const b = el("b", null, c.titulo); 
+    capa.append(b, document.createTextNode("Espaço para a imagem de capa (4:5)")); 
+  }
+
+  // 2. Coluna da Direita: Informações e Detalhes Expansíveis
   const info = el("div", "case-info");
-  const textoTopo = el("div");
-  textoTopo.append(el("h4", null, c.titulo), el("p", "cli", `Cliente: ${cliente}`), el("p", "desc", c.descricao));
-  textoTopo.querySelector("h4").id = `t-${c.id}`;
   
+  const textoTopo = el("div");
+  const tituloH4 = el("h4", null, c.titulo);
+  tituloH4.id = `t-${c.id}`;
+  textoTopo.append(tituloH4, el("p", "cli", `Cliente: ${cliente}`), el("p", "desc", c.descricao));
+
   const acoes = el("div", "acoes");
-  const ver = el("button", "btn-line", "Ver detalhes +"); ver.type = "button"; ver.setAttribute("aria-expanded", "false"); ver.setAttribute("aria-controls", `d-${c.id}`);
-  const ig = el("button", "btn", "VER CONTEÚDOS ↗"); ig.type = "button"; ig.dataset.abrir = c.id;
+  const ver = el("button", "btn-line", "Ver detalhes +"); 
+  ver.type = "button"; 
+  ver.setAttribute("aria-expanded", "false"); 
+  ver.setAttribute("aria-controls", `d-${c.id}`);
+  
+  const ig = el("button", "btn", "VER CONTEÚDOS ↗"); 
+  ig.type = "button"; 
+  ig.dataset.abrir = c.id;
+  
   acoes.append(ig, ver); 
 
-  const det = el("div", "detalhes"); det.id = `d-${c.id}`;
+  // Bloco de Detalhes
+  const det = el("div", "detalhes"); 
+  det.id = `d-${c.id}`;
+  
   const bl = el("div", "blocos");
-  bl.append(bloco("Contexto e objetivo", c.contexto), bloco("Público-alvo", c.publico), bloco("Estratégia de comunicação", c.estrategia),
-    bloco("Minha participação", c.participacao), bloco("Ações realizadas", c.acoes), bloco("Formatos e conteúdos produzidos", c.formatos));
+  bl.append(
+    bloco("Contexto e objetivo", c.contexto), 
+    bloco("Público-alvo", c.publico), 
+    bloco("Estratégia de comunicação", c.estrategia),
+    bloco("Minha participação", c.participacao), 
+    bloco("Ações realizadas", c.acoes), 
+    bloco("Formatos e conteúdos produzidos", c.formatos)
+  );
+  
   det.append(bl, resultados(c));
 
   ver.addEventListener("click", () => {
-    const open = det.classList.toggle("open"); ver.setAttribute("aria-expanded", open);
+    const open = det.classList.toggle("open"); 
+    ver.setAttribute("aria-expanded", open);
     ver.textContent = open ? "Fechar detalhes −" : "Ver detalhes +";
   });
 
-  // Organiza dentro do bloco de info para que os detalhes fiquem perfeitamente alinhados abaixo dos botões
+  // Agrupa tudo na coluna de info e adiciona ao article principal
   info.append(textoTopo, acoes, det);
   art.append(capa, info); 
+  
   return art;
 }
-}
 
-/* montagem */
+/* Montagem geral da página e índice */
 const indice = $("#indice"), raiz = $("#clientes");
 PROJETOS.forEach(p => {
   const sec = el("div", "cliente");
-  const head = el("div", "cliente-head"); head.append(el("h3", null, `${p.cliente}.`), el("p", null, p.resumo)); sec.append(head);
+  const head = el("div", "cliente-head"); 
+  head.append(el("h3", null, `${p.cliente}.`), el("p", null, p.resumo)); 
+  sec.append(head);
+  
   p.campanhas.forEach((c, i) => {
     sec.append(renderCase(c, p.cliente, i));
-    const li = el("li"); const a = el("a", null, c.titulo); a.href = `#${c.id}`; a.append(el("small", null, `${p.cliente}`)); li.append(a); indice.append(li);
+    const li = el("li"); 
+    const a = el("a", null, c.titulo); 
+    a.href = `#${c.id}`; 
+    a.append(el("small", null, `${p.cliente}`)); 
+    li.append(a); 
+    indice.append(li);
   });
+  
   raiz.append(sec);
 });
 
-/* contato com ícones Font Awesome */
+/* Contato com ícones Font Awesome */
 const L = $("#links-contato");
 const icones = {
   "E-mail": "fa-regular fa-envelope",
@@ -108,11 +148,11 @@ const icones = {
     L.append(a); 
   });
 
-/* revelar cases ao rolar */
+/* Revelar cases ao rolar */
 const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 }) : null;
 document.querySelectorAll(".case").forEach(c => io ? io.observe(c) : c.classList.add("in"));
 
-/* modal de conteúdos */
+/* Modal de conteúdos */
 const modal = $("#modal"); let gatilho = null;
 function abrir(id, btn) {
   let camp, cli; PROJETOS.forEach(p => p.campanhas.forEach(c => { if (c.id === id) { camp = c; cli = p.cliente; } }));
@@ -125,5 +165,5 @@ function abrir(id, btn) {
 }
 document.addEventListener("click", e => { const b = e.target.closest("[data-abrir]"); if (b) abrir(b.dataset.abrir, b); });
 $(".m-x").addEventListener("click", () => modal.close());
-modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });          // clique fora
-modal.addEventListener("close", () => gatilho && gatilho.focus());                          // ESC e foco de volta
+modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });
+modal.addEventListener("close", () => gatilho && gatilho.focus());
