@@ -87,7 +87,7 @@ const PROJETOS = [
           { rotulo: "Ver Reel NaCopa ↗", url: "https://www.instagram.com/reel/DZqh3nrRvH4/?utm_source=ig_web_copy_link&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Faturamento Diário", valor: "R$ 5-35", unidade: "mil", nota: "Média durante os dias de jogos da Copa" },
+          { indicador: "Faturamento Diário", valor: "R$ 20-38", unidade: "mil", nota: "Média durante os dias de jogos da Copa" },
           { indicador: "Lotação", valor: "100%", unidade: "", nota: "Casa cheia superando a forte concorrência local" }
         ]
       }
