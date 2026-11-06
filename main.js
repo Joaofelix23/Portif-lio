@@ -32,28 +32,39 @@ function resultados(c) {
 
 function renderCase(c, cliente, i) {
   const art = el("article", "case"); art.id = c.id; art.setAttribute("aria-labelledby", `t-${c.id}`);
+  
+  // Capa (Coluna da Esquerda no Desktop)
   const capa = el("div", "capa");
   if (c.capa) { const im = el("img"); im.src = c.capa; im.alt = `Capa da campanha ${c.titulo}`; im.width = 800; im.height = 1000; im.loading = i ? "lazy" : "eager"; capa.append(im); }
   else { capa.innerHTML = ""; const b = el("b", null, c.titulo); capa.append(b, document.createTextNode("Espaço para a imagem de capa (4:5)")); }
-  const info = el("div");
-  info.append(el("h4", null, c.titulo), el("p", "cli", `Cliente: ${cliente}`), el("p", "desc", c.descricao));
-  info.querySelector("h4").id = `t-${c.id}`;
+  
+  // Conteúdo (Coluna da Direita no Desktop)
+  const info = el("div", "case-info");
+  const textoTopo = el("div");
+  textoTopo.append(el("h4", null, c.titulo), el("p", "cli", `Cliente: ${cliente}`), el("p", "desc", c.descricao));
+  textoTopo.querySelector("h4").id = `t-${c.id}`;
+  
   const acoes = el("div", "acoes");
   const ver = el("button", "btn-line", "Ver detalhes +"); ver.type = "button"; ver.setAttribute("aria-expanded", "false"); ver.setAttribute("aria-controls", `d-${c.id}`);
   const ig = el("button", "btn", "VER CONTEÚDOS ↗"); ig.type = "button"; ig.dataset.abrir = c.id;
-  acoes.append(ig, ver); info.append(acoes);
+  acoes.append(ig, ver); 
 
   const det = el("div", "detalhes"); det.id = `d-${c.id}`;
   const bl = el("div", "blocos");
   bl.append(bloco("Contexto e objetivo", c.contexto), bloco("Público-alvo", c.publico), bloco("Estratégia de comunicação", c.estrategia),
     bloco("Minha participação", c.participacao), bloco("Ações realizadas", c.acoes), bloco("Formatos e conteúdos produzidos", c.formatos));
-  // Galeria removida conforme pedido do usuário
   det.append(bl, resultados(c));
+
   ver.addEventListener("click", () => {
     const open = det.classList.toggle("open"); ver.setAttribute("aria-expanded", open);
     ver.textContent = open ? "Fechar detalhes −" : "Ver detalhes +";
   });
-  art.append(capa, info, det); return art;
+
+  // Organiza dentro do bloco de info para que os detalhes fiquem perfeitamente alinhados abaixo dos botões
+  info.append(textoTopo, acoes, det);
+  art.append(capa, info); 
+  return art;
+}
 }
 
 /* montagem */
