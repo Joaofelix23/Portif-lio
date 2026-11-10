@@ -17,13 +17,33 @@ function resultados(c) {
   s.append(el("h5", null, "O impacto em números"));
   const g = el("dl", "res-grid"); g.style.margin = 0;
   let algum = false;
+  
   (c.resultados || []).forEach(r => {
     const has = r.valor !== "" && r.valor != null; algum ||= has;
     const i = el("div", "res-item");
     i.append(el("dt", null, r.indicador));
-    const dd = el("dd"); const v = el("span", "v" + (has ? "" : " off"), has ? `${r.valor}${r.unidade ? " " + r.unidade : ""}` : "—");
-    dd.append(v); if (r.nota) dd.append(el("small", null, r.nota)); i.append(dd); g.append(i);
+    const dd = el("dd"); 
+    
+    const v = el("span", "v" + (has ? "" : " off"));
+    
+    if (has && r.target !== undefined) {
+      v.className += " stat-number";
+      v.setAttribute("data-target", r.target);
+      if (r.prefix) v.setAttribute("data-prefix", r.prefix);
+      if (r.suffix) v.setAttribute("data-suffix", r.suffix);
+      if (r.decimals) v.setAttribute("data-decimals", r.decimals);
+      // Começa zerado para dar o efeito de contagem ao animar
+      v.textContent = (r.prefix || "") + "0" + (r.suffix || "");
+    } else {
+      v.textContent = has ? `${r.valor}${r.unidade ? " " + r.unidade : ""}` : "—";
+    }
+
+    dd.append(v); 
+    if (r.nota) dd.append(el("small", null, r.nota)); 
+    i.append(dd); 
+    g.append(i);
   });
+  
   s.append(g);
   if (!algum) s.append(el("p", "res-msg", "Resultados em atualização."));
   return s;
@@ -89,9 +109,13 @@ function renderCase(c, cliente, i) {
     const open = det.classList.toggle("open"); 
     ver.setAttribute("aria-expanded", open);
     ver.textContent = open ? "Fechar detalhes −" : "Ver detalhes +";
+    
+    // Dispara a animação dos números assim que o usuário clica para abrir os detalhes
+    if (open && typeof window.triggerCounter === "function") {
+      setTimeout(() => window.triggerCounter(det), 50);
+    }
   });
 
-  // Agrupa tudo na coluna de info e adiciona ao article principal
   info.append(textoTopo, acoes, det);
   art.append(capa, info); 
   
