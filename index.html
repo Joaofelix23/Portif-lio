@@ -72,5 +72,87 @@
 
 <script src="projects.js"></script>
 <script src="main.js"></script>
+
+<!-- ==================================================
+     SISTEMA DE ANIMAÇÃO DE NÚMEROS (CONTADOR COM EASE-OUT)
+================================================== -->
+<script>
+(function () {
+  "use strict";
+
+  function animateValue(obj, start, end, duration, decimals, prefix, suffix) {
+    if (obj.dataset.animated === "true") return;
+    obj.dataset.animated = "true";
+
+    var startTimestamp = null;
+    var step = function (timestamp) {
+      if (!startTimestamp) startTimestamp = timestamp;
+      var progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      
+      // Curva Ease-Out
+      var easeOutProgress = 1 - Math.pow(1 - progress, 3);
+      var currentValue = start + easeOutProgress * (end - start);
+      
+      var formattedValue = decimals > 0 
+        ? currentValue.toFixed(decimals) 
+        : Math.floor(currentValue);
+
+      obj.innerHTML = prefix + formattedValue + suffix;
+      
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  window.triggerCounter = function(scope) {
+    var container = scope || document;
+    var elements = container.querySelectorAll(".stat-number");
+    elements.forEach(function (el) {
+      var target = parseFloat(el.getAttribute("data-target"));
+      if (!isNaN(target)) {
+        var prefix = el.getAttribute("data-prefix") || "";
+        var suffix = el.getAttribute("data-suffix") || "";
+        var decimals = parseInt(el.getAttribute("data-decimals"), 10) || 0;
+
+        animateValue(el, 0, target, 1500, decimals, prefix, suffix);
+      }
+    });
+  };
+
+  var numObserver = new IntersectionObserver(function (entries, observer) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        triggerCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  function observeNumbers() {
+    var elements = document.querySelectorAll(".res");
+    elements.forEach(function (el) {
+      if (el.dataset.observed !== "true") {
+        el.dataset.observed = "true";
+        numObserver.observe(el);
+      }
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", observeNumbers);
+  window.addEventListener("load", observeNumbers);
+
+  var mutationObserver = new MutationObserver(function () {
+    observeNumbers();
+  });
+
+  mutationObserver.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+})();
+</script>
+
 </body>
 </html>
