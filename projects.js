@@ -36,10 +36,10 @@ const PROJETOS = [
           { rotulo: "Ver Reel de Edição Recorrente ↗", url: "https://www.instagram.com/reel/DRaj61Vjy3v/?utm_source=ig_web_copy_link&rpxt=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Satisfação", valor: "100%", unidade: "", nota: "Taxa de aprovação do público" },
-          { indicador: "Novos Clientes", valor: "65%", unidade: "", nota: "Público inédito no Namata" },
-          { indicador: "Avaliações", valor: "5", unidade: "estrelas", nota: "Média máxima no Google" },
-          { indicador: "Faturamento (Quarta)", valor: "R$ 13.5", unidade: "mil", nota: "Comparado a R$ 0–1.5k habitual" }
+          { indicador: "Satisfação", valor: "100%", target: 100, suffix: "%", nota: "Taxa de aprovação do público" },
+          { indicador: "Novos Clientes", valor: "65%", target: 65, suffix: "%", nota: "Público inédito no Namata" },
+          { indicador: "Avaliações", valor: "5 estrelas", target: 5, suffix: " estrelas", nota: "Média máxima no Google" },
+          { indicador: "Faturamento (Quarta)", valor: "R$ 13.5 mil", target: 13.5, prefix: "R$ ", suffix: " mil", decimals: 1, nota: "Comparado a R$ 0–1.5k habitual" }
         ]
       },
       {
@@ -62,8 +62,8 @@ const PROJETOS = [
           { rotulo: "Ver Reel Esquenta NaCopa ↗", url: "https://www.instagram.com/reel/DZFiu4ARqdo/?utm_source=ig_web_copy_link&mdxt=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Faturamento Diário", valor: "R$ 5-15", unidade: "mil", nota: "Média durante o período de esquenta" },
-          { indicador: "Conversão", valor: "Direta", unidade: "", nota: "Público do esquenta lotou os jogos oficiais" }
+          { indicador: "Faturamento Diário", valor: "R$ 15 mil", target: 15, prefix: "R$ ", suffix: " mil", nota: "Média durante o período de esquenta" },
+          { indicador: "Conversão", valor: "Direta", nota: "Público do esquenta lotou os jogos oficiais" }
         ]
       },
       {
@@ -87,8 +87,8 @@ const PROJETOS = [
           { rotulo: "Ver Reel NaCopa ↗", url: "https://www.instagram.com/reel/DZqh3nrRvH4/?utm_source=ig_web_copy_link&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Faturamento Diário", valor: "R$ 20-38", unidade: "mil", nota: "Média durante os dias de jogos da Copa" },
-          { indicador: "Lotação", valor: "100%", unidade: "", nota: "Casa cheia superando a forte concorrência local" }
+          { indicador: "Faturamento Diário", valor: "R$ 38 mil", target: 38, prefix: "R$ ", suffix: " mil", nota: "Média durante os dias de jogos da Copa" },
+          { indicador: "Lotação", valor: "100%", target: 100, suffix: "%", nota: "Casa cheia superando a forte concorrência local" }
         ]
       }
     ]
@@ -117,9 +117,9 @@ const PROJETOS = [
           { rotulo: "Ver Cobertura do Festival ↗", url: "https://www.instagram.com/reel/DUzSpjUjNtq/?utm_source=ig_web_copy_link&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Edição 2024", valor: "7 mil", unidade: "pessoas", nota: "Base de comparação inicial" },
-          { indicador: "Edição 2025", valor: "10 mil", unidade: "pessoas", nota: "Crescimento de público" },
-          { indicador: "Edição 2026", valor: "12 mil+", unidade: "pessoas", nota: "Escala consolidada" }
+          { indicador: "Edição 2024", valor: "7 mil pessoas", target: 7, suffix: " mil pessoas", nota: "Base de comparação inicial" },
+          { indicador: "Edição 2025", valor: "10 mil pessoas", target: 10, suffix: " mil pessoas", nota: "Crescimento de público" },
+          { indicador: "Edição 2026", valor: "12 mil+ pessoas", target: 12, suffix: " mil+ pessoas", nota: "Escala consolidada" }
         ]
       },
       {
@@ -141,8 +141,8 @@ const PROJETOS = [
           { rotulo: "Ver Reel Luau do Armandinho ↗", url: "https://www.instagram.com/reel/DVMdzfqDkzn/?utm_source=ig_web_copy_link&psln=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Público Atendido", valor: "10 mil", unidade: "pessoas", nota: "2ª Edição" },
-          { indicador: "Gestão", valor: "Equipe", unidade: "alinhada", nota: "Zero ruptura de estoque no evento" }
+          { indicador: "Público Atendido", valor: "10 mil pessoas", target: 10, suffix: " mil pessoas", nota: "2ª Edição" },
+          { indicador: "Gestão", valor: "Equipe alinhada", nota: "Zero ruptura de estoque no evento" }
         ]
       },
       {
@@ -164,8 +164,8 @@ const PROJETOS = [
           { rotulo: "Ver Reel Rodeo Lucky Friends ↗", url: "https://www.instagram.com/reel/Cyr0bO8sruC/?utm_source=ig_web_copy_link&xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Público", valor: "15 mil", unidade: "pessoas", nota: "IX Edição" },
-          { indicador: "Entrega", valor: "100%", unidade: "contrato", nota: "Riders cumpridos sem desvios" }
+          { indicador: "Público", valor: "15 mil pessoas", target: 15, suffix: " mil pessoas", nota: "IX Edição" },
+          { indicador: "Entrega", valor: "100%", target: 100, suffix: "%", nota: "Riders cumpridos sem desvios" }
         ]
       },
       {
@@ -185,7 +185,7 @@ const PROJETOS = [
         galeria: [],
         conteudos: [],
         resultados: [
-          { indicador: "Acompanhamento", valor: "Ponta a ponta", unidade: "", nota: "Do contrato ao pós-evento" }
+          { indicador: "Acompanhamento", valor: "Ponta a ponta", nota: "Do contrato ao pós-evento" }
         ]
       }
     ]
