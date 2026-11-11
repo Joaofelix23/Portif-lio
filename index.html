@@ -89,7 +89,6 @@
       if (!startTimestamp) startTimestamp = timestamp;
       var progress = Math.min((timestamp - startTimestamp) / duration, 1);
       
-      // Curva Ease-Out
       var easeOutProgress = 1 - Math.pow(1 - progress, 3);
       var currentValue = start + easeOutProgress * (end - start);
       
