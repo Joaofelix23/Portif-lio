@@ -32,7 +32,6 @@ function resultados(c) {
       if (r.prefix) v.setAttribute("data-prefix", r.prefix);
       if (r.suffix) v.setAttribute("data-suffix", r.suffix);
       if (r.decimals) v.setAttribute("data-decimals", r.decimals);
-      // Começa zerado para dar o efeito de contagem ao animar
       v.textContent = (r.prefix || "") + "0" + (r.suffix || "");
     } else {
       v.textContent = has ? `${r.valor}${r.unidade ? " " + r.unidade : ""}` : "—";
@@ -110,7 +109,6 @@ function renderCase(c, cliente, i) {
     ver.setAttribute("aria-expanded", open);
     ver.textContent = open ? "Fechar detalhes −" : "Ver detalhes +";
     
-    // Dispara a animação dos números assim que o usuário clica para abrir os detalhes
     if (open && typeof window.triggerCounter === "function") {
       setTimeout(() => window.triggerCounter(det), 50);
     }
