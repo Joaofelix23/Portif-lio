@@ -141,7 +141,7 @@ const PROJETOS = [
           { rotulo: "Ver Reel Luau do Armandinho ↗", url: "https://www.instagram.com/reel/DVMdzfqDkzn/?utm_source=ig_web_copy_link&psln=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==" }
         ],
         resultados: [
-          { indicador: "Público Atendido", valor: "10 mil pessoas", target: 10, suffix: " mil pessoas", nota: "2ª Edição" }
+          { indicador: "Público Atendido", valor: "10 mil pessoas", target: 10, suffix: " mil pessoas", nota: "1ª Edição" }
         ]
       },
       {
