@@ -14,7 +14,7 @@ function bloco(titulo, conteudo) {
 
 function resultados(c) {
   const s = el("section", "res"); s.setAttribute("aria-label", "Resultados da campanha");
-  s.append(el("h5", null, "O impacto em números"));
+  s.append(el("h5", null, "O impacto"));
   const g = el("dl", "res-grid"); g.style.margin = 0;
   let algum = false;
   
